@@ -9,7 +9,7 @@ import { UpdateTodo } from '../models/update-todo.model';
 
 @Injectable()
 export class TodoService {
-  constructor(@InjectModel(TodoModel.name) private readonly todoModel: Model<TodoModel>) {}
+  constructor(@InjectModel('Todo') private readonly todoModel: Model<TodoModel>) {}
 
   async createTodo(createTodo: CreateTodo): Promise<Todo> {
     const todo = new this.todoModel({
