@@ -21,7 +21,7 @@ It is recommended to understand [nest.js fundamentals] before attempting to deve
 The starter connects to [MongoDB] by default. Therefore, make sure you have access to a running MongoDB instance. You can find instructions to setup one [here][mongodb-setup].
 
 ```
-$ git clone https://github.com/contentstack/microservice-framework-js your-project
+$ git clone git@github.com:contentstack/microservice-framework-js.git your-project
 $ cd your-project
 $ npm install
 $ cp local-env .env # .env file contains configuration for the microservice
