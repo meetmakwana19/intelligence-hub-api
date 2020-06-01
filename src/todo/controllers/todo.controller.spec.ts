@@ -1,8 +1,16 @@
-import { INestApplication } from '@nestjs/common';
-import { Test, TestingModule } from '@nestjs/testing';
 import { Types } from 'mongoose';
-import { err, ok } from 'neverthrow';
+import {
+  err,
+  ok,
+} from 'neverthrow';
 import * as request from 'supertest';
+
+import { INestApplication } from '@nestjs/common';
+import {
+  Test,
+  TestingModule,
+} from '@nestjs/testing';
+
 import { validationPipe } from '../../app/validation-pipe';
 import { TodoNotFound } from '../errors/todo.errors';
 import { CreateTodo } from '../models/create-todo.model';
@@ -40,7 +48,8 @@ describe('Todo Controller', () => {
 
   describe('todo creation', () => {
     it('creates a todo', () => {
-      const todoServiceSpy = jest.spyOn(todoService, 'createTodo').mockImplementation(() => Promise.resolve(expectedTodo));
+      const todoServiceSpy = jest.spyOn(todoService, 'createTodo')
+          .mockImplementation(() => Promise.resolve(expectedTodo));
       const todo: CreateTodo = {text: 'Buy milk'};
   
       return request(app.getHttpServer())
@@ -55,7 +64,8 @@ describe('Todo Controller', () => {
     });
   
     it('does not create an empty todo', () => {
-      const todoServiceSpy = jest.spyOn(todoService, 'createTodo').mockImplementation(() => Promise.resolve(expectedTodo));
+      const todoServiceSpy = jest.spyOn(todoService, 'createTodo')
+          .mockImplementation(() => Promise.resolve(expectedTodo));
       const todo: CreateTodo = {text: ''};
   
       return request(app.getHttpServer())
@@ -69,7 +79,8 @@ describe('Todo Controller', () => {
     });
   
     it('does not allow extra parameters in request', () => {
-      const todoServiceSpy = jest.spyOn(todoService, 'createTodo').mockImplementation(() => Promise.resolve(expectedTodo));
+      const todoServiceSpy = jest.spyOn(todoService, 'createTodo')
+          .mockImplementation(() => Promise.resolve(expectedTodo));
       const todo = {text: 'buy milk', completed: true};
   
       return request(app.getHttpServer())
@@ -83,7 +94,8 @@ describe('Todo Controller', () => {
     });
   
     it('does not allow datatype other than string for todo text', () => {
-      const todoServiceSpy = jest.spyOn(todoService, 'createTodo').mockImplementation(() => Promise.resolve(expectedTodo));
+      const todoServiceSpy = jest.spyOn(todoService, 'createTodo')
+          .mockImplementation(() => Promise.resolve(expectedTodo));
       const todo = {text: 42};
   
       return request(app.getHttpServer())
@@ -99,7 +111,8 @@ describe('Todo Controller', () => {
 
   describe('todo updation', () => {
     it('updates a todo', () => {
-      const todoServiceSpy = jest.spyOn(todoService, 'updateTodo').mockImplementation(() => Promise.resolve(ok(expectedTodo)));
+      const todoServiceSpy = jest.spyOn(todoService, 'updateTodo')
+          .mockImplementation(() => Promise.resolve(ok(expectedTodo)));
       const todo: UpdateTodo = {text: 'Buy milk', completed: true};
 
       return request(app.getHttpServer())
@@ -114,7 +127,8 @@ describe('Todo Controller', () => {
     });
 
     it('does not update with empty todo text', () => {
-      const todoServiceSpy = jest.spyOn(todoService, 'updateTodo').mockImplementation(() => Promise.resolve(ok(expectedTodo)));
+      const todoServiceSpy = jest.spyOn(todoService, 'updateTodo')
+          .mockImplementation(() => Promise.resolve(ok(expectedTodo)));
       const todo: UpdateTodo = {text: '', completed: true};
 
       return request(app.getHttpServer())
@@ -128,7 +142,8 @@ describe('Todo Controller', () => {
     });
 
     it('does not update without completed status', () => {
-      const todoServiceSpy = jest.spyOn(todoService, 'updateTodo').mockImplementation(() => Promise.resolve(ok(expectedTodo)));
+      const todoServiceSpy = jest.spyOn(todoService, 'updateTodo')
+          .mockImplementation(() => Promise.resolve(ok(expectedTodo)));
       const todo = {text: 'buy milk'};
 
       return request(app.getHttpServer())
@@ -142,7 +157,8 @@ describe('Todo Controller', () => {
     });
 
     it('does not allow datatype other than string for todo text', () => {
-      const todoServiceSpy = jest.spyOn(todoService, 'updateTodo').mockImplementation(() => Promise.resolve(ok(expectedTodo)));
+      const todoServiceSpy = jest.spyOn(todoService, 'updateTodo')
+          .mockImplementation(() => Promise.resolve(ok(expectedTodo)));
       const todo = {text: 42, completed: true};
 
       return request(app.getHttpServer())
@@ -156,7 +172,8 @@ describe('Todo Controller', () => {
     });
 
     it('does not allow datatype other than boolean for todo completed status', () => {
-      const todoServiceSpy = jest.spyOn(todoService, 'updateTodo').mockImplementation(() => Promise.resolve(ok(expectedTodo)));
+      const todoServiceSpy = jest.spyOn(todoService, 'updateTodo')
+          .mockImplementation(() => Promise.resolve(ok(expectedTodo)));
       const todo = {text: 'buy milk', completed: 'true'};
 
       return request(app.getHttpServer())
@@ -170,7 +187,8 @@ describe('Todo Controller', () => {
     });
 
     it('does not allow invalid id', () => {
-      const todoServiceSpy = jest.spyOn(todoService, 'updateTodo').mockImplementation(() => Promise.resolve(ok(expectedTodo)));
+      const todoServiceSpy = jest.spyOn(todoService, 'updateTodo')
+          .mockImplementation(() => Promise.resolve(ok(expectedTodo)));
       const todo = {text: 'buy milk', completed: true};
 
       return request(app.getHttpServer())
@@ -184,7 +202,8 @@ describe('Todo Controller', () => {
     });
 
     it('returns error when todo not found', () => {
-      const todoServiceSpy = jest.spyOn(todoService, 'updateTodo').mockImplementation(() => Promise.resolve(err(new TodoNotFound())));
+      const todoServiceSpy = jest.spyOn(todoService, 'updateTodo')
+          .mockImplementation(() => Promise.resolve(err(new TodoNotFound())));
       const todo = {text: 'buy milk', completed: true};
 
       return request(app.getHttpServer())
@@ -200,7 +219,8 @@ describe('Todo Controller', () => {
 
   describe('find all todos', () => {
     it('finds all todos', () => {
-      const todoServiceSpy = jest.spyOn(todoService, 'findAllTodos').mockImplementation(() => Promise.resolve([expectedTodo]));
+      const todoServiceSpy = jest.spyOn(todoService, 'findAllTodos')
+          .mockImplementation(() => Promise.resolve([expectedTodo]));
 
       return request(app.getHttpServer())
         .get('/todos')
