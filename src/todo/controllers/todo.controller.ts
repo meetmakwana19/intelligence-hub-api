@@ -30,7 +30,7 @@ export class TodoController {
     if (result.isOk()) {
       return result.value;
     } else {
-      throw new NotFoundException("todo not found");
+      throw new NotFoundException('todo not found');
     }
   }
 

@@ -24,5 +24,7 @@ module.exports = {
     "@typescript-eslint/semi": ["error"],
     "@typescript-eslint/array-type": ["error"],
     "@typescript-eslint/no-throw-literal": ["error"],
+    "quotes": "off",
+    "@typescript-eslint/quotes": ["error", "single"],
   },
 };
