@@ -1,6 +1,15 @@
-import { Body, Controller, Get, HttpException, HttpStatus, NotFoundException, Param, Post, Put } from '@nestjs/common';
-import { Types } from 'mongoose';
+import {
+  Body,
+  Controller,
+  Get,
+  NotFoundException,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
+
 import { CreateTodo } from '../models/create-todo.model';
+import { ObjectIdParam } from '../models/object-id.param';
 import { Todo } from '../models/todo.model';
 import { UpdateTodo } from '../models/update-todo.model';
 import { TodoService } from '../services/todo.service';
@@ -17,16 +26,10 @@ export class TodoController {
   @Put(':id')
   async update(
     @Body() todo: UpdateTodo,
-    @Param('id') id: string
+    @Param() params: ObjectIdParam
   ): Promise<Todo> {
-    let todoId;
-    try {
-      todoId = Types.ObjectId(id);
-    } catch(error) {
-      throw new HttpException('Invalid todo ID', HttpStatus.BAD_REQUEST);
-    }
+    const result = await this.todoService.updateTodo(params.id, todo);
 
-    const result = await this.todoService.updateTodo(todoId, todo);
     if (result.isOk()) {
       return result.value;
     } else {

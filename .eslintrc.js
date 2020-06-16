@@ -27,5 +27,6 @@ module.exports = {
     "quotes": "off",
     "@typescript-eslint/quotes": ["error", "single"],
     "max-len": ["error", {"code": 120}],
+    "@typescript-eslint/no-use-before-define": ["error", { "functions": false }],
   },
 };
