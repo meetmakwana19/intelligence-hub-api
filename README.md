@@ -1,7 +1,7 @@
-# Node.js Microservice Starter
+# Node.js API starter
 
 ## What's this?
-A microservice starter framework based on [nest.js]. Use it as a base for building Node.js microservices.
+A API starter kit based on [nest.js]. Use it as a base for building Node.js microservices.
 
 It is recommended to understand [nest.js fundamentals] before attempting to develop new features using this starter.
 
