@@ -1,8 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import * as mockData from '../../utils/mock.data.json';
+
 import { TodoController } from '../../../src/todo/todo.controller';
+import { Todo } from '../../../src/todo/todo.interface';
 import { TodoService } from '../../../src/todo/todo.service';
-import { Todo } from '../../../src/todo/todo.entity';
+import * as mockData from '../../utils/mock.data.json';
 
 describe('Entry Controller', () => {
   let controller: TodoController;

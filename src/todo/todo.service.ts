@@ -1,41 +1,34 @@
-import { Injectable, Inject } from '@nestjs/common';
-import { Todo } from './todo.entity';
 import { Collection, DAL, DAO, InjectDAO } from '@contentstack/mongodb';
+import { Injectable } from '@nestjs/common';
+
+import { APP_DB } from '../utils';
+import { Todo } from './todo.interface';
+
 @Injectable()
 export class TodoService {
-  constructor(@InjectDAO('coredb', DAL.FULL_ACCESS) private clientdb: DAO) {}
+  private readonly todo: Collection;
+
+  constructor(@InjectDAO(APP_DB, DAL.FULL_ACCESS) private db: DAO) {
+    this.todo = db.collection('todo');
+  }
 
   async getAll(): Promise<Todo[]> {
-    const todo = this.clientdb.collection('todos');
-    return await todo.find<Todo>({});
+    return await this.todo.find<Todo>({});
   }
 
-  async getOne(uid: string): Promise<Todo> {
-    const todo = this.clientdb.collection('todos');
-    return await todo.findOne<Todo>({ uid });
-  }
-
-  async getOneBytitle(title: string): Promise<Todo> {
-    const todo = this.clientdb.collection('todos');
-    return await todo.findOne<Todo>({ title });
+  async getByUid(uid: string): Promise<Todo> {
+    return await this.todo.findOne<Todo>({ uid });
   }
 
   async insertOne(todo: Todo): Promise<Todo> {
-    const entrydb = this.clientdb.collection('todos');
-    return await entrydb.insertOne<Todo>(todo);
+    return await this.todo.insertOne<Todo>(todo);
   }
 
-  async updateOne(todo: Todo): Promise<Todo> {
-    const { uid } = todo;
-    const entrydb = this.clientdb.collection('todos');
-    const newvalues = { $set: { description: todo.description, title: todo.title } };
-    await entrydb.updateOne<Todo>({ uid }, newvalues);
-    return this.getOne(uid);
+  async updateOne(uid: string, todo: Todo): Promise<Todo> {
+    return await this.todo.updateOne<Todo>({ uid }, { $set: todo });
   }
 
-  async deleteOne(uid: string): Promise<{ deleted: boolean; message?: string }> {
-    const todo = this.clientdb.collection('todos');
-    const result = await todo.deleteOne({ uid });
-    return { deleted: true };
+  async deleteOne(uid: string): Promise<void> {
+    await this.todo.deleteOne<Todo>({ uid });
   }
 }
