@@ -36,5 +36,4 @@ export class TodoController {
   async deleteEntry(@Param('id') id: string): Promise<{ deleted: boolean }> {
     return this.todoService.deleteOne(id);
   }
-
 }

@@ -1,0 +1,9 @@
+{
+  "name": "en",
+  "messages": {
+    "greetings": {
+      "hello_world": "Hello World!",
+      "hi_name": "Hi {name}!"
+    }
+  }
+}

@@ -1,5 +1,5 @@
 export interface Todo {
-    uid?: string;
-    title: string;
-    description: string;
+  uid?: string;
+  title: string;
+  description: string;
 }

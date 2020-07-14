@@ -4,15 +4,17 @@ import { TodoController } from './todo.controller';
 import { TodoService } from './todo.service';
 
 @Module({
-    imports: [    MongoDBFactory.connect({
-        name: 'coredb',
-        url: 'mongodb://localhost',
-        options: {
-          useUnifiedTopology: true,
-        },
-        database: 'rawcms_production',
-      })],
-      controllers: [TodoController],
-      providers: [TodoService],
+  imports: [
+    MongoDBFactory.connect({
+      name: 'coredb',
+      url: 'mongodb://localhost',
+      options: {
+        useUnifiedTopology: true,
+      },
+      database: 'rawcms_production',
+    }),
+  ],
+  controllers: [TodoController],
+  providers: [TodoService],
 })
 export class TodoModule {}
