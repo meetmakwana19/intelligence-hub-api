@@ -1,6 +1,6 @@
 import { ArgumentsHost, Catch, ExceptionFilter, HttpException } from '@nestjs/common';
 
-import { I18nService } from './i18n/i18n.service';
+import { I18nService } from './i18n';
 
 @Catch(HttpException)
 export class AllExceptionsFilter implements ExceptionFilter<HttpException> {
