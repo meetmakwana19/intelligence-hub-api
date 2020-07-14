@@ -4,6 +4,9 @@
     "greetings": {
       "hello_world": "Hello World!",
       "hi_name": "Hi {name}!"
+    },
+    "errors": {
+        "TODO": "//TODO: check ./utils/all-exception.filter.ts"
     }
   }
 }

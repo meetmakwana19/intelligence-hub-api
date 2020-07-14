@@ -49,11 +49,13 @@ export class I18nService {
       lang = this.masterLanguage;
     }
 
-    const template = code.split('.').reduce((obj, key) => {
-      return obj[key];
-    }, this.messages.get(lang).messages);
+    let template: string;
+    try {
+      template = code.split('.').reduce((obj, key) => {
+        return obj[key];
+      }, this.messages.get(lang).messages);
+    } catch (e) {}
 
-    return (template) ? this.render(template, options) : code;
-
+    return template ? this.render(template, options) : code;
   }
 }
