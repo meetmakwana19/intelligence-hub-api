@@ -3,7 +3,7 @@ import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 
 import { AppModule } from './app.module';
-import { AllExceptionsFilter, TimeoutInterceptor } from './utils';
+import { AllExceptionsFilter, I18nService, TimeoutInterceptor } from './utils';
 
 async function bootstrap() {
   const fastify = new FastifyAdapter({});
@@ -12,7 +12,7 @@ async function bootstrap() {
 
   app.useGlobalInterceptors(new TimeoutInterceptor(100));
 
-  app.useGlobalFilters(new AllExceptionsFilter());
+  app.useGlobalFilters(new AllExceptionsFilter(app.get<I18nService>(I18nService)));
 
   app.enableShutdownHooks(['SIGTERM', 'SIGINT', 'SIGHUP', 'uncaughtException', 'unhandledRejection']);
 

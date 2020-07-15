@@ -1,16 +1,21 @@
-import { ArgumentsHost, Catch, ExceptionFilter, HttpException, HttpStatus } from '@nestjs/common';
+import { ArgumentsHost, Catch, ExceptionFilter, HttpException } from '@nestjs/common';
 
-@Catch()
-export class AllExceptionsFilter implements ExceptionFilter {
-  catch(exception: unknown, host: ArgumentsHost): void {
+import { I18nService } from './i18n';
+
+@Catch(HttpException)
+export class AllExceptionsFilter implements ExceptionFilter<HttpException> {
+  private readonly i18n: I18nService;
+  constructor(i18n: I18nService) {
+    this.i18n = i18n;
+  }
+
+  async catch(exception: HttpException, host: ArgumentsHost): Promise<void> {
     const ctx = host.switchToHttp();
     const res = ctx.getResponse();
-    const req = ctx.getRequest();
+    //const req = ctx.getRequest();
 
-    const status = exception instanceof HttpException ? exception.getStatus() : HttpStatus.INTERNAL_SERVER_ERROR;
-
-    res.status(status).send({
-      error_message: 'Error occured.',
+    res.code(500).send({
+      error_message: this.i18n.translate('en', 'errors.TODO'),
     });
   }
 }
