@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
-import { AppModule } from '../../../src/app.module';
-import TestDbHelper from '../../utils/db.helper';
+import { AppModule } from '../../src/app.module';
+import TestDbHelper from '../utils/db.helper';
 import { NestFastifyApplication, FastifyAdapter } from '@nestjs/platform-fastify';
 
 const dbHelper = new TestDbHelper();
@@ -16,7 +16,7 @@ describe('TodoController (e2e)', () => {
         const moduleFixture: TestingModule = await Test.createTestingModule({
           imports: [AppModule],
         })
-          .overrideProvider('coredb__db')
+          .overrideProvider('TODO__dao_full')
           .useValue(db)
           .compile();
 
@@ -54,22 +54,14 @@ describe('TodoController (e2e)', () => {
       .post('/todo/new')
       .send({
         uid: 'new1',
-        name: 'name1',
+        description: 'name1',
         title: 'title1',
       });
     expect(response.status).toBe(201);
-    //const insertedRecords=response.body['ops'];
-    //expect(response.body.length).toEqual(1);
-    expect(response.body.name).toEqual('name1');
+    expect(response.body.description).toEqual('name1');
     expect(response.body.uid).toEqual('new1');
     expect(response.body.title).toEqual('title1');
 
-    done();
-  });
-  it('/todo/delete/:id (DELETE) - Verify data with id', async done => {
-    const response = await request(app.getHttpServer()).delete('/todo/delete/blt1');
-    expect(response.status).toBe(200);
-    expect(response.body.deleted).toEqual(true);
     done();
   });
 });

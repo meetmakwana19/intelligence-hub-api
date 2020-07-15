@@ -1,8 +1,8 @@
 import { HttpException, HttpStatus } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { AllExceptionsFilter } from '../../src/utils'; //'../../src/utils/http-exception.filter';
-import { I18nService } from '../../src/utils/i18n/i18n.service';
+import { AllExceptionsFilter, I18nModule } from '../../src/utils'; //'../../src/utils/http-exception.filter';
+import { I18nConfig } from '../../src/config/i18n.config';
 
 const mockSend = jest.fn();
 const mockCode = jest.fn().mockImplementation(() => ({
@@ -37,13 +37,9 @@ describe('System header validation service', () => {
   beforeEach(async () => {
     jest.clearAllMocks();
     const module: TestingModule = await Test.createTestingModule({
+      imports:[I18nModule.register(I18nConfig())],
       providers: [
-        AllExceptionsFilter,
-        I18nService,
-        // {
-        //     provide: I18nService,
-        //     useValue: mockI18Service
-        // },
+        AllExceptionsFilter        
       ],
     }).compile();
     service = module.get<AllExceptionsFilter>(AllExceptionsFilter);
@@ -62,14 +58,10 @@ describe('System header validation service', () => {
       expect(mockGetResponse).toBeCalledTimes(1);
       expect(mockGetResponse).toBeCalledWith();
       expect(mockCode).toBeCalledTimes(1);
-      expect(mockCode).toBeCalledWith(HttpStatus.BAD_REQUEST);
+      expect(mockCode).toBeCalledWith(HttpStatus.INTERNAL_SERVER_ERROR);
       expect(mockSend).toBeCalledTimes(1);
       expect(mockSend).toBeCalledWith({
-        code: 400,
-        error: 'Bad Request',
-        method: 'get',
-        path: '/',
-        timestamp: 1487076708000,
+        error_message: '//TODO: check ./utils/all-exception.filter.ts'
       });
     });
   });

@@ -14,10 +14,11 @@ export class I18nService {
     this.masterLanguage = options.masterLanguage;
     this.messagesPath = options.messagesPath;
     this.messages = new Map<string, I18nMessages>();
+    this.loadMessages();
   }
 
   protected onApplicationBootstrap(): void {
-    this.loadMessages();
+    //this.loadMessages();
   }
 
   private loadMessages() {
