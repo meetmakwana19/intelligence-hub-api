@@ -6,5 +6,5 @@ export interface I18nOptions {
 export interface I18nMessages {
   name: string;
   fallbackLanguage?: string;
-  messages: Map<string, unknown>;
+  messages: Map<string, string>;
 }

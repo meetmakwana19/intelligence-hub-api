@@ -1,8 +1,8 @@
 import { HttpException, HttpStatus } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { AllExceptionsFilter, I18nModule } from '../../src/utils'; //'../../src/utils/http-exception.filter';
 import { I18nConfig } from '../../src/config/i18n.config';
+import { AllExceptionsFilter, I18nModule, I18nService } from '../../src/utils'; //'../../src/utils/http-exception.filter';
 
 const mockSend = jest.fn();
 const mockCode = jest.fn().mockImplementation(() => ({
@@ -37,13 +37,13 @@ describe('System header validation service', () => {
   beforeEach(async () => {
     jest.clearAllMocks();
     const module: TestingModule = await Test.createTestingModule({
-      imports:[I18nModule.register(I18nConfig())],
-      providers: [
-        AllExceptionsFilter        
-      ],
+      imports: [I18nModule.register(I18nConfig())],
+      providers: [AllExceptionsFilter],
     }).compile();
     service = module.get<AllExceptionsFilter>(AllExceptionsFilter);
     dateNowSpy = jest.spyOn(Date, 'now').mockImplementation(() => 1487076708000);
+    const i18n = module.get<I18nService>(I18nService);
+    i18n.onApplicationBootstrap();
   });
 
   describe('All exception filter tests', () => {
@@ -61,7 +61,7 @@ describe('System header validation service', () => {
       expect(mockCode).toBeCalledWith(HttpStatus.INTERNAL_SERVER_ERROR);
       expect(mockSend).toBeCalledTimes(1);
       expect(mockSend).toBeCalledWith({
-        error_message: '//TODO: check ./utils/all-exception.filter.ts'
+        error_message: '//TODO: check ./utils/all-exception.filter.ts',
       });
     });
   });

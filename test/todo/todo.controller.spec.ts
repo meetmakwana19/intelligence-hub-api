@@ -65,7 +65,7 @@ describe('Entry Controller', () => {
     it('should update a new Entry', () => {
       const newEntry: Todo = <Todo>mockData.todo[0];
       jest.spyOn(service, 'updateOne').mockImplementationOnce(async () => newEntry);
-      expect(controller.update('blt1',newEntry)).resolves.toEqual(newEntry);
+      expect(controller.update('blt1', newEntry)).resolves.toEqual(newEntry);
     });
   });
 });

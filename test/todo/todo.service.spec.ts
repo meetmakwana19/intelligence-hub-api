@@ -1,8 +1,11 @@
+import { DAL, DAOService } from '@contentstack/mongodb';
+import { getDAOToken } from '@contentstack/mongodb/dist/common/utils';
 import { Test, TestingModule } from '@nestjs/testing';
-import * as mockData from '../utils/mock.data.json';
+
 import { TodoService } from '../../src/todo/todo.service';
+import { APP_DB } from '../../src/utils';
 import TestDbHelper from '../utils/db.helper';
-import { DAOService, DAL } from '@contentstack/mongodb';
+import * as mockData from '../utils/mock.data.json';
 
 const dbHelper = new TestDbHelper();
 
@@ -14,7 +17,7 @@ describe('TodoService', () => {
       providers: [
         TodoService,
         {
-          provide: 'TODO__dao_full',
+          provide: getDAOToken(APP_DB, DAL.FULL_ACCESS),
           useFactory: async () => {
             return new DAOService(db, DAL.FULL_ACCESS);
           },
@@ -33,7 +36,7 @@ describe('TodoService', () => {
     expect(service).toBeDefined();
   });
   describe('getAll', () => {
-    it('should return an array of todos',() => {
+    it('should return an array of todos', () => {
       expect(service.getAll()).resolves.toEqual(mockData.todo);
     });
   });
@@ -49,7 +52,7 @@ describe('TodoService', () => {
         uid: '4',
         title: 'title',
       });
-      
+
       expect(resultData.description).toEqual('test1');
       expect(resultData.uid).toEqual('4');
       expect(resultData.title).toEqual('title');
@@ -57,7 +60,7 @@ describe('TodoService', () => {
   });
   describe('updateOne', () => {
     it('should call the update method', async () => {
-      const resultData = await service.updateOne('blt1',{
+      const resultData = await service.updateOne('blt1', {
         title: 'updated Title',
         description: 'updated description',
         uid: 'blt1',

@@ -1,25 +1,34 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, OnApplicationBootstrap } from '@nestjs/common';
 import * as fs from 'fs';
 import * as path from 'path';
 
 import { I18nMessages, I18nOptions } from './i18n.interface';
 
 @Injectable()
-export class I18nService {
+export class I18nService implements OnApplicationBootstrap {
   private readonly masterLanguage: string;
   private readonly messagesPath: string;
   private readonly messages: Map<string, I18nMessages>;
+  private matcher: RegExp;
 
   constructor(options: I18nOptions) {
     this.masterLanguage = options.masterLanguage;
     this.messagesPath = options.messagesPath;
     this.messages = new Map<string, I18nMessages>();
+    //this.loadMessages();
+  }
+
+  onApplicationBootstrap(): void {
+    console.log('22222222222');
+    this.matcher = /\{(\w+)\}/g;
     this.loadMessages();
   }
 
-  protected onApplicationBootstrap(): void {
-    //this.loadMessages();
-  }
+  //  onModuleInit(): void {
+  //     console.log('22222222222');
+  //     this.matcher = /\{(\w+)\}/g;
+  //     this.loadMessages();
+  //   }
 
   private loadMessages() {
     const json = /^(.+)\.json$/;
@@ -37,8 +46,11 @@ export class I18nService {
   }
 
   private render(template: string, options: Record<string, string>): string {
-    const matcher = /\{(\w+)\}/g;
-    (template.match(matcher) || []).forEach((key: string) => {
+    if (!options) {
+      return template;
+    }
+
+    (template.match(this.matcher) || []).forEach((key: string) => {
       template = template.replace(key, options[key.substring(1, key.length - 1)]);
     });
 

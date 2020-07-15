@@ -1,6 +1,8 @@
+import { Db, MongoClient } from 'mongodb';
 import { MongoMemoryServer } from 'mongodb-memory-server';
-import { MongoClient, Db } from 'mongodb';
+
 import * as mockData from './mock.data.json';
+
 const COLLECTIONS = ['todos'];
 export default class TestDbHelper {
   public server = new MongoMemoryServer();
