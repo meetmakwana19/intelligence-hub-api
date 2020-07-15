@@ -1,12 +1,21 @@
+import { DAL, DAOService } from '@contentstack/mongodb';
+import { getDAOToken } from '@contentstack/mongodb/dist/common/utils';
+import { Provider } from '@nestjs/common';
 import { Db, MongoClient } from 'mongodb';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 
 import * as mockData from './mock.data.json';
 
 const COLLECTIONS = ['todos'];
+
 export default class TestDbHelper {
-  public server = new MongoMemoryServer();
+  public readonly server: MongoMemoryServer;
   public db: Db;
+
+  constructor() {
+    this.server = new MongoMemoryServer();
+  }
+
   /**
    * Start the server and establish a connection
    */
@@ -18,12 +27,8 @@ export default class TestDbHelper {
   }
 
   async getConnection(dbURL: string): Promise<Db> {
-    return new Promise((resolve, reject) => {
-      MongoClient.connect(dbURL, { useNewUrlParser: true }, async (error, client) => {
-        const db = await client.db();
-        resolve(db);
-      });
-    });
+    const client = await MongoClient.connect(dbURL, { useUnifiedTopology: true, useNewUrlParser: true });
+    return client.db();
   }
 
   async addMockData(): Promise<void> {
@@ -34,11 +39,15 @@ export default class TestDbHelper {
 
   async cleanup(): Promise<void> {
     await Promise.all(COLLECTIONS.map(c => this.db.collection(c).remove({})));
-    // await this.db.getCollectionNames().forEach(
-    //   (collection_name) =>{
-    //     this.db[collection_name].remove()
-    //   }
-    // );
     this.server.stop();
+  }
+
+  public static getProvider(name: string, db: Db, dal: DAL): Provider {
+    return {
+      provide: getDAOToken(name, dal),
+      useFactory: (): DAOService => {
+        return new DAOService(db, dal);
+      },
+    };
   }
 }

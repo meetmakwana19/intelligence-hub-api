@@ -15,20 +15,12 @@ export class I18nService implements OnApplicationBootstrap {
     this.masterLanguage = options.masterLanguage;
     this.messagesPath = options.messagesPath;
     this.messages = new Map<string, I18nMessages>();
-    //this.loadMessages();
   }
 
   onApplicationBootstrap(): void {
-    console.log('22222222222');
     this.matcher = /\{(\w+)\}/g;
     this.loadMessages();
   }
-
-  //  onModuleInit(): void {
-  //     console.log('22222222222');
-  //     this.matcher = /\{(\w+)\}/g;
-  //     this.loadMessages();
-  //   }
 
   private loadMessages() {
     const json = /^(.+)\.json$/;
