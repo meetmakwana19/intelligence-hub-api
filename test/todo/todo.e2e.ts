@@ -64,4 +64,11 @@ describe('TodoController (e2e)', () => {
 
     done();
   });
+
+  it('/todo/:id (DELETE) - Verify data with id', async done => {
+    const response = await request(app.getHttpServer()).delete('/todo/blt1');
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual(true);
+    done();
+  });
 });

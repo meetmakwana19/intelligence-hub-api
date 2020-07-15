@@ -61,11 +61,19 @@ describe('Entry Controller', () => {
       expect(insertOneSpy).toBeCalledWith(newEntry);
     });
   });
+
   describe('updateEntry', () => {
     it('should update a new Entry', () => {
       const newEntry: Todo = <Todo>mockData.todo[0];
       jest.spyOn(service, 'updateOne').mockImplementationOnce(async () => newEntry);
       expect(controller.update('blt1', newEntry)).resolves.toEqual(newEntry);
+    });
+  });
+
+  describe('Delete Entry', () => {
+    it('should delete Entry', () => {
+      jest.spyOn(service, 'deleteOne').mockImplementationOnce(async () => true);
+      expect(controller.delete('blt1')).resolves.toEqual(true);
     });
   });
 });

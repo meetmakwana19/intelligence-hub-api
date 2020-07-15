@@ -66,4 +66,11 @@ describe('TodoService', () => {
       expect(resultData.uid).toEqual('blt1');
     });
   });
+
+  describe('deleteOne', () => {
+    it('should call the delete method', async () => {
+      const result = await service.deleteOne('blt1');
+      expect(result).toEqual(true);
+    });
+  });
 });
