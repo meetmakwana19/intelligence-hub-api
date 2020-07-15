@@ -3,24 +3,23 @@ import { Test, TestingModule } from '@nestjs/testing';
 
 import { TodoService } from '../../src/todo/todo.service';
 import { APP_DB } from '../../src/utils';
+import * as mockData from '../resources/mock.data.json';
 import TestDbHelper from '../utils/db.helper';
-import * as mockData from '../utils/mock.data.json';
 
 const dbHelper = new TestDbHelper();
 
 describe('TodoService', () => {
   let service: TodoService;
+  
   beforeAll(async () => {
     const db = await dbHelper.start();
     const module: TestingModule = await Test.createTestingModule({
-      providers: [
-        TodoService,
-        TestDbHelper.getProvider(APP_DB, db, DAL.FULL_ACCESS),
-      ],
+      providers: [TodoService, TestDbHelper.getProvider(APP_DB, db, DAL.FULL_ACCESS)],
     }).compile();
 
     service = module.get<TodoService>(TodoService);
   });
+
   afterAll(async () => {
     //Stop MongoMemoryServer and clear memory
     await dbHelper.cleanup();

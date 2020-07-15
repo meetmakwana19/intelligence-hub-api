@@ -33,7 +33,6 @@ const mockArgumentsHost = {
 
 describe('System header validation service', () => {
   let service: AllExceptionsFilter;
-  let dateNowSpy;
   beforeEach(async () => {
     jest.clearAllMocks();
     const module: TestingModule = await Test.createTestingModule({
@@ -41,7 +40,6 @@ describe('System header validation service', () => {
       providers: [AllExceptionsFilter],
     }).compile();
     service = module.get<AllExceptionsFilter>(AllExceptionsFilter);
-    dateNowSpy = jest.spyOn(Date, 'now').mockImplementation(() => 1487076708000);
     const i18n = module.get<I18nService>(I18nService);
     i18n.onApplicationBootstrap();
   });

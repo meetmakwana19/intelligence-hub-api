@@ -3,7 +3,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { TodoController } from '../../src/todo/todo.controller';
 import { Todo } from '../../src/todo/todo.interface';
 import { TodoService } from '../../src/todo/todo.service';
-import * as mockData from '../utils/mock.data.json';
+import * as mockData from '../resources/mock.data.json';
 
 const mockDBConnection = {
   collection: jest.fn(),
