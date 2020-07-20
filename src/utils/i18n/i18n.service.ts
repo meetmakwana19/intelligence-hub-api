@@ -40,8 +40,8 @@ export class I18nService implements OnApplicationBootstrap {
       return template;
     }
 
-    for(const key of Object.keys(options)) {
-      template = template.replace('{'+key+'}', options[key]);
+    for (const key of Object.keys(options)) {
+      template = template.replace('{' + key + '}', options[key]);
     }
 
     return template;
