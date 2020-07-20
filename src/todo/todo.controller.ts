@@ -28,7 +28,7 @@ export class TodoController {
   }
 
   @Delete('/:id')
-  async delete(@Param('id') id: string): Promise<void> {
+  async delete(@Param('id') id: string): Promise<boolean> {
     return this.todoService.deleteOne(id);
   }
 }

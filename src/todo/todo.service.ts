@@ -28,7 +28,8 @@ export class TodoService {
     return await this.todo.updateOne<Todo>({ uid }, { $set: todo });
   }
 
-  async deleteOne(uid: string): Promise<void> {
+  async deleteOne(uid: string): Promise<boolean> {
     await this.todo.deleteOne<Todo>({ uid });
+    return true;
   }
 }
