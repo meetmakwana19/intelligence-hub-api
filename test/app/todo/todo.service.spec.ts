@@ -1,10 +1,10 @@
 import { DAL } from '@contentstack/mongodb';
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { TodoService } from '../../src/todo/todo.service';
-import { APP_DB } from '../../src/utils';
-import * as mockData from '../resources/mock.data.json';
-import TestDbHelper from '../utils/db.helper';
+import { TodoService } from '../../../src/app/todo/todo.service';
+import { APP_DB } from '../../../src/framework/utils';
+import TestDbHelper from '../../framework/utils/db.helper';
+import * as mockData from '../../resources/mock.data.json';
 
 const dbHelper = new TestDbHelper();
 

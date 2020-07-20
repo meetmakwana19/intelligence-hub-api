@@ -5,7 +5,7 @@ import { MongoDBConfig } from './mongodb.config';
 
 export function loadConfig(): ConfigModuleOptions {
   return {
-    envFilePath: path.join(__dirname, '../..', (process.env.NODE_ENV || 'development') + '.env'),
+    envFilePath: path.join(__dirname, '../../..', (process.env.NODE_ENV || 'development') + '.env'),
     load: [MongoDBConfig],
   };
 }

@@ -3,7 +3,7 @@ import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 
 import { AppModule } from './app.module';
-import { AllExceptionsFilter, I18nService, RequestMiddleware, TimeoutInterceptor } from './utils';
+import { AllExceptionsFilter, I18nService, RequestMiddleware, TimeoutInterceptor } from './framework/utils';
 
 async function bootstrap() {
   const fastify = new FastifyAdapter({});

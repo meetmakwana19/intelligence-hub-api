@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { I18nConfig } from '../../src/config/i18n.config';
-import { I18nModule } from '../../src/utils';
-import { I18nService } from '../../src/utils/i18n/i18n.service';
+import { I18nConfig } from '../../../src/framework/config/i18n.config';
+import { I18nModule } from '../../../src/framework/utils';
+import { I18nService } from '../../../src/framework/utils/i18n/i18n.service';
 
 describe('System header validation service', () => {
   let service: I18nService;

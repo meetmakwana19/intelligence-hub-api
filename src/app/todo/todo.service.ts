@@ -1,7 +1,7 @@
 import { Collection, DAL, DAO, InjectDAO } from '@contentstack/mongodb';
 import { Injectable } from '@nestjs/common';
 
-import { APP_DB } from '../utils';
+import { APP_DB } from '../../framework/utils';
 import { Todo } from './todo.interface';
 
 @Injectable()
