@@ -4,7 +4,7 @@ import { Provider } from '@nestjs/common';
 import { Db, MongoClient } from 'mongodb';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 
-import * as mockData from '../resources/mock.data.json';
+import * as mockData from '../../resources/mock.data.json';
 
 const COLLECTIONS = ['todos'];
 

@@ -1,10 +1,11 @@
-import { Test, TestingModule } from '@nestjs/testing';
+import { DAL, DAOService } from '@contentstack/mongodb';
 import { INestApplication } from '@nestjs/common';
+import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
+import { Test, TestingModule } from '@nestjs/testing';
 import * as request from 'supertest';
-import { AppModule } from '../../src/app.module';
-import TestDbHelper from '../utils/db.helper';
-import { NestFastifyApplication, FastifyAdapter } from '@nestjs/platform-fastify';
-import { DAOService, DAL } from '@contentstack/mongodb';
+
+import { AppModule } from '../../../src/app.module';
+import TestDbHelper from '../../framework/utils/db.helper';
 
 const dbHelper = new TestDbHelper();
 

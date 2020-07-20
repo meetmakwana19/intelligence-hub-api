@@ -1,8 +1,8 @@
 import { HttpException, HttpStatus } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { I18nConfig } from '../../src/config/i18n.config';
-import { AllExceptionsFilter, I18nModule, I18nService } from '../../src/utils'; //'../../src/utils/http-exception.filter';
+import { I18nConfig } from '../../../src/framework/config/i18n.config';
+import { AllExceptionsFilter, I18nModule, I18nService } from '../../../src/framework/utils'; //'../../src/utils/http-exception.filter';
 
 const mockSend = jest.fn();
 const mockCode = jest.fn().mockImplementation(() => ({
