@@ -1,13 +1,25 @@
-import { ConfigService } from '@nestjs/config';
+import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app/app.module';
-import { validationPipe } from './app/validation-pipe';
+import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
+
+import { AppModule } from './app.module';
+import { AllExceptionsFilter, I18nService, RequestMiddleware, TimeoutInterceptor } from './utils';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  const configService: ConfigService = app.get(ConfigService);
-  app.useGlobalPipes(validationPipe);
-  app.enableShutdownHooks();
-  await app.listen(configService.get<number>('port') as number);
+  const fastify = new FastifyAdapter({});
+
+  const app = await NestFactory.create<NestFastifyApplication>(AppModule, fastify);
+
+  app.use(RequestMiddleware);
+
+  app.useGlobalInterceptors(new TimeoutInterceptor(1000));
+
+  app.useGlobalFilters(new AllExceptionsFilter(app.get<I18nService>(I18nService)));
+
+  app.enableShutdownHooks(['SIGTERM', 'SIGINT', 'SIGHUP', 'uncaughtException', 'unhandledRejection']);
+
+  Logger.log('Starting API...', 'APILogger');
+
+  await app.listen(Number(process.env.PORT) || 3000);
 }
 bootstrap();

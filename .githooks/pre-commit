@@ -1,0 +1,33 @@
+#!/bin/sh
+currentFolder=$(pwd)
+
+gitRootFolder=$(git rev-parse --show-toplevel)
+cd $gitRootFolder
+
+npm run format
+exitCode=$?
+if [ $exitCode -ne 0 ]
+then
+	echo "npm run format failed!!"
+	exit 1
+fi
+
+npm run lint
+exitCode=$?
+if [ $exitCode -ne 0 ]
+then
+	echo "npm run lint failed!!"
+	exit 1
+fi
+
+npm run build
+exitCode=$?
+if [ $exitCode -ne 0 ]
+then
+	echo "npm run build failed!!"
+	exit 1
+fi
+
+cd $currentFolder
+
+exit 0
