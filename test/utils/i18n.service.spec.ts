@@ -24,14 +24,14 @@ describe('System header validation service', () => {
       const result = service.translate('en', 'noKey');
       expect(result).toEqual('noKey');
     });
-    
+
     it('Should return nested key from resource file', () => {
       const result = service.translate('en', 'greetings.hello_world');
       expect(result).toEqual('Hello World!');
     });
 
     it('Should return nested key from resource file', () => {
-      const result = service.translate('en', 'greetings.hi_name', {name: 'John'});
+      const result = service.translate('en', 'greetings.hi_name', { name: 'John' });
       expect(result).toEqual('Hi John!');
     });
   });

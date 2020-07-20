@@ -10,7 +10,7 @@ const dbHelper = new TestDbHelper();
 
 describe('TodoService', () => {
   let service: TodoService;
-  
+
   beforeAll(async () => {
     const db = await dbHelper.start();
     const module: TestingModule = await Test.createTestingModule({

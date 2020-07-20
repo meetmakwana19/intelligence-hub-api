@@ -3,14 +3,16 @@ import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 
 import { AppModule } from './app.module';
-import { AllExceptionsFilter, I18nService, TimeoutInterceptor } from './utils';
+import { AllExceptionsFilter, I18nService, RequestMiddleware, TimeoutInterceptor } from './utils';
 
 async function bootstrap() {
   const fastify = new FastifyAdapter({});
 
   const app = await NestFactory.create<NestFastifyApplication>(AppModule, fastify);
 
-  app.useGlobalInterceptors(new TimeoutInterceptor(100));
+  app.use(RequestMiddleware);
+
+  app.useGlobalInterceptors(new TimeoutInterceptor(1000));
 
   app.useGlobalFilters(new AllExceptionsFilter(app.get<I18nService>(I18nService)));
 

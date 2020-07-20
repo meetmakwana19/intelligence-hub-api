@@ -9,7 +9,6 @@ export class I18nService implements OnApplicationBootstrap {
   private readonly masterLanguage: string;
   private readonly messagesPath: string;
   private readonly messages: Map<string, I18nMessages>;
-  private matcher: RegExp;
 
   constructor(options: I18nOptions) {
     this.masterLanguage = options.masterLanguage;
@@ -18,12 +17,11 @@ export class I18nService implements OnApplicationBootstrap {
   }
 
   onApplicationBootstrap(): void {
-    this.matcher = /\{(\w+)\}/g;
     this.loadMessages();
   }
 
   private loadMessages() {
-    const json = /^(.+)\.json$/;
+    const json = /^(.+)\.json$/; // It will run only once when we are loading messages into application.
     const files = fs.readdirSync(this.messagesPath);
     files.forEach(file => {
       if (json.test(file)) {
@@ -42,9 +40,9 @@ export class I18nService implements OnApplicationBootstrap {
       return template;
     }
 
-    (template.match(this.matcher) || []).forEach((key: string) => {
-      template = template.replace(key, options[key.substring(1, key.length - 1)]);
-    });
+    for (const key of Object.keys(options)) {
+      template = template.replace('{' + key + '}', options[key]);
+    }
 
     return template;
   }

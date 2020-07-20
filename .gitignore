@@ -39,3 +39,4 @@ lerna-debug.log*
 # test reporter
 test-reporter.xml
 report.json
+.scannerwork
