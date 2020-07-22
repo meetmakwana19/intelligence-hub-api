@@ -1,4 +1,4 @@
-import { Logger } from '@nestjs/common';
+import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 
@@ -11,6 +11,8 @@ async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(AppModule, fastify);
 
   app.use(RequestMiddleware);
+
+  app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
 
   app.useGlobalInterceptors(new TimeoutInterceptor(1000));
 
