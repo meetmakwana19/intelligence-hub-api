@@ -1,10 +1,13 @@
-import { Test, TestingModule } from '@nestjs/testing';
+import { DAL, DAOService } from '@contentstack/mongodb';
+import { getDAOToken } from '@contentstack/mongodb/dist/common/utils';
 import { INestApplication } from '@nestjs/common';
+import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
+import { Test, TestingModule } from '@nestjs/testing';
 import * as request from 'supertest';
-import { AppModule } from '../../src/app.module';
-import TestDbHelper from '../utils/db.helper';
-import { NestFastifyApplication, FastifyAdapter } from '@nestjs/platform-fastify';
-import { DAOService, DAL } from '@contentstack/mongodb';
+
+import { AppModule } from '../../../src/app.module';
+import { APP_DB } from '../../../src/framework/utils';
+import TestDbHelper from '../../framework/utils/db.helper';
 
 const dbHelper = new TestDbHelper();
 
@@ -17,7 +20,7 @@ describe('TodoController (e2e)', () => {
         const moduleFixture: TestingModule = await Test.createTestingModule({
           imports: [AppModule],
         })
-          .overrideProvider('TODO__dao_full')
+          .overrideProvider(getDAOToken(APP_DB, DAL.FULL_ACCESS))
           .useValue(new DAOService(db, DAL.FULL_ACCESS))
           .compile();
 

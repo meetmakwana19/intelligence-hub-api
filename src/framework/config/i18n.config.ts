@@ -1,6 +1,6 @@
 import { registerAs } from '@nestjs/config';
 import * as path from 'path';
-import { I18nOptions } from 'src/utils';
+import { I18nOptions } from 'src/framework/utils';
 
 export const I18nConfig = registerAs(
   'I18N',
@@ -8,7 +8,7 @@ export const I18nConfig = registerAs(
   (): I18nOptions => {
     return {
       masterLanguage: 'en',
-      messagesPath: path.resolve(__dirname, './../resources/messages'),
+      messagesPath: path.resolve(__dirname, './../../resources/messages'),
     };
   },
 );

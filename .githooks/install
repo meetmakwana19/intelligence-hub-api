@@ -1,3 +1,10 @@
 #!/bin/sh
-gitRootFolder=$(git rev-parse --show-toplevel)
-cp $gitRootFolder"/.githooks/pre-commit" $gitRootFolder"/.git/hooks/pre-commit"
+echo "Adding pre-commit and pre-push hooks..."
+DIR=$(pwd) 
+
+cp $DIR"/.githooks/pre-commit" $DIR"/.git/hooks/pre-commit"
+cp $DIR"/.githooks/pre-push" $DIR"/.git/hooks/pre-push"
+chmod 775 $DIR"/.git/hooks/pre-commit" $DIR"/.git/hooks/pre-push"
+
+echo "Added pre-commit and pre-push hooks."
+exit 0
