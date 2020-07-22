@@ -1,0 +1,6 @@
+projectKey=cda
+serverUrl=http://localhost:9000
+serverVersion=8.4.1.35646
+dashboardUrl=http://localhost:9000/dashboard?id=cda
+ceTaskId=AXNrzzTKkWhelHv-p87m
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXNrzzTKkWhelHv-p87m
