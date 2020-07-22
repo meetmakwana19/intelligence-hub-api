@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { TodoController } from '../../../src/app/todo/todo.controller';
-import { Todo } from '../../../src/app/todo/todo.interface';
-import { TodoService } from '../../../src/app/todo/todo.service';
+import { TodoController } from '../../../src/app/todo-mongodb/todo.controller';
+import { Todo } from '../../../src/app/todo-mongodb/todo.interface';
+import { TodoService } from '../../../src/app/todo-mongodb/todo.service';
 import * as mockData from '../../resources/mock.data.json';
 
 const mockDBConnection = {

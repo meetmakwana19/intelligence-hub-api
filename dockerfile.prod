@@ -18,4 +18,4 @@ COPY ./package-lock.json /app/package-lock.json
 RUN npm install --production
 
 # start server
-CMD ["pm2-docker", "start", "server.js"]
+CMD ["pm2-docker", "start", "main.js"]

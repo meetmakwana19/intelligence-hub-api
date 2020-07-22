@@ -26,7 +26,10 @@ describe('TodoController (e2e)', () => {
 
         app = await moduleFixture.createNestApplication<NestFastifyApplication>(new FastifyAdapter());
         await app.init();
-        await app.getHttpAdapter().getInstance().ready();
+        await app
+          .getHttpAdapter()
+          .getInstance()
+          .ready();
         resolve();
       }),
   );

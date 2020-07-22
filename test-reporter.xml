@@ -1,3 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
+    <file path="/Users/roshangade/contentstack/api-starter-kit/src/app/todo-mongoose/parsers/object-id.parser.spec.ts">
+        <testCase name="Object ID Parser parses an object Id" duration="3"/>
+        <testCase name="Object ID Parser throws an error when id is invalid" duration="5"/>
+    </file>
+    <file path="/Users/roshangade/contentstack/api-starter-kit/test/app/todo/todo.controller.spec.ts">
+        <testCase name="Entry Controller getEntries should get an array of Entries" duration="36"/>
+        <testCase name="Entry Controller getById should get a single Entry" duration="3"/>
+        <testCase name="Entry Controller newEntry should create a new Entry" duration="4"/>
+        <testCase name="Entry Controller updateEntry should update a new Entry" duration="3"/>
+        <testCase name="Entry Controller Delete Entry should delete Entry" duration="4"/>
+    </file>
+    <file path="/Users/roshangade/contentstack/api-starter-kit/test/app/todo/todo.service.spec.ts">
+        <testCase name="TodoService should be defined" duration="2"/>
+        <testCase name="TodoService getAll should return an array of todos" duration="11"/>
+        <testCase name="TodoService getOne should get a single Todo" duration="1"/>
+        <testCase name="TodoService insertOne should successfully insert a Entry" duration="9"/>
+        <testCase name="TodoService updateOne should call the update method" duration="5"/>
+        <testCase name="TodoService deleteOne should call the delete method" duration="3"/>
+    </file>
+    <file path="/Users/roshangade/contentstack/api-starter-kit/src/app/todo-mongoose/services/todo.service.spec.ts">
+        <testCase name="TodoService creates incomplete todo" duration="7"/>
+        <testCase name="TodoService updates todo" duration="2"/>
+        <testCase name="TodoService throws an error when todo not found" duration="2"/>
+        <testCase name="TodoService finds all todos" duration="0"/>
+    </file>
+    <file path="/Users/roshangade/contentstack/api-starter-kit/test/framework/utils/i18n.service.spec.ts">
+        <testCase name="System header validation service i18 service tests should be defined" duration="3"/>
+        <testCase name="System header validation service i18 service tests Should return provided key if resource not present" duration="2"/>
+        <testCase name="System header validation service i18 service tests Should return nested key from resource file" duration="0"/>
+        <testCase name="System header validation service i18 service tests Should return nested key from resource file" duration="0"/>
+    </file>
+    <file path="/Users/roshangade/contentstack/api-starter-kit/test/framework/utils/expection.filter.spec.ts">
+        <testCase name="System header validation service All exception filter tests should be defined" duration="12"/>
+        <testCase name="System header validation service All exception filter tests Http exception" duration="6"/>
+    </file>
+    <file path="/Users/roshangade/contentstack/api-starter-kit/src/app/todo-mongoose/todo.module.spec.ts">
+        <testCase name="Todo integration test creates and finds todos" duration="64"/>
+    </file>
+    <file path="/Users/roshangade/contentstack/api-starter-kit/src/app/todo-mongoose/controllers/todo.controller.spec.ts">
+        <testCase name="Todo Controller todo creation creates a todo" duration="91"/>
+        <testCase name="Todo Controller todo creation does not create an empty todo" duration="36"/>
+        <testCase name="Todo Controller todo creation does not allow extra parameters in request" duration="33"/>
+        <testCase name="Todo Controller todo creation does not allow datatype other than string for todo text" duration="22"/>
+        <testCase name="Todo Controller todo updation updates a todo" duration="31"/>
+        <testCase name="Todo Controller todo updation does not update with empty todo text" duration="37"/>
+        <testCase name="Todo Controller todo updation does not update without completed status" duration="27"/>
+        <testCase name="Todo Controller todo updation does not allow datatype other than string for todo text" duration="23"/>
+        <testCase name="Todo Controller todo updation does not allow datatype other than boolean for todo completed status" duration="30"/>
+        <testCase name="Todo Controller todo updation does not allow invalid id" duration="53"/>
+        <testCase name="Todo Controller todo updation returns error when todo not found" duration="36"/>
+        <testCase name="Todo Controller find all todos finds all todos" duration="22"/>
+    </file>
 </testExecutions>

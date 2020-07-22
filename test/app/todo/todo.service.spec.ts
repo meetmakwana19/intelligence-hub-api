@@ -1,7 +1,7 @@
 import { DAL } from '@contentstack/mongodb';
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { TodoService } from '../../../src/app/todo/todo.service';
+import { TodoService } from '../../../src/app/todo-mongodb/todo.service';
 import { APP_DB } from '../../../src/framework/utils';
 import TestDbHelper from '../../framework/utils/db.helper';
 import * as mockData from '../../resources/mock.data.json';
