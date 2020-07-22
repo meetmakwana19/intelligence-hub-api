@@ -35,3 +35,8 @@ lerna-debug.log*
 
 # dotenv
 .env
+
+# test reporter
+test-reporter.xml
+report.json
+.scannerwork

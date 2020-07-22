@@ -1,0 +1,3 @@
+#!/bin/sh
+gitRootFolder=$(git rev-parse --show-toplevel)
+cp $gitRootFolder"/.githooks/pre-commit" $gitRootFolder"/.git/hooks/pre-commit"
