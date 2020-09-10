@@ -1,6 +1,6 @@
 format_version: 3
 pipelines:
-  apistarterkit-service-build-test-publish:
+  apistarterkit-build-test-publish:
     group: apistarterkit
     label_template: ${COUNT}
     lock_behavior: none
