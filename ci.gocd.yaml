@@ -1,0 +1,42 @@
+format_version: 3
+pipelines:
+  apistarterkit-service-build-test-publish:
+    group: apistarterkit
+    label_template: ${COUNT}
+    lock_behavior: none
+    display_order: -1
+    materials:
+      git:
+        git: git@github.com:contentstack/api-starter-kit.git
+        shallow_clone: false
+        auto_update: true
+        branch: PER-73
+    stages:
+      - lint-and-test:
+          fetch_materials: true
+          keep_artifacts: false
+          clean_workspace: false
+          approval:
+            type: success
+            allow_only_on_success: false
+          jobs:
+            lint-and-test:
+              elastic_profile_id: k8s-npm-build
+              timeout: 0
+              tasks:
+                - exec:
+                    arguments:
+                      - install
+                    command: npm
+                    run_if: passed
+                - exec:
+                    arguments:
+                      - run
+                      - lint
+                    command: npm
+                    run_if: passed
+                - exec:
+                    arguments:
+                      - test
+                    command: npm
+                    run_if: passed
