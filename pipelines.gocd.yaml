@@ -10,7 +10,7 @@ pipelines:
         git: git@github.com:contentstack/api-starter-kit.git
         shallow_clone: false
         auto_update: true
-        branch: PER-73
+        branch: master
     stages:
       - lint-and-test:
           fetch_materials: true

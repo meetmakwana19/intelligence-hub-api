@@ -1,6 +1,7 @@
 # Node.js API starter
 
 ## What's this?
+
 A API starter kit based on [nest.js]. Use it as a base for building Node.js microservices.
 
 It is recommended to understand [nest.js fundamentals] before attempting to develop new features using this starter.
@@ -8,9 +9,9 @@ It is recommended to understand [nest.js fundamentals] before attempting to deve
 ## Guiding principles
 
 - [The Twelve-Factor App][12-factor]
-- [SOLID Principles][SOLID]
-- [Don't Repeat Yourself][DRY]
-- [Keep it simple, stupid][KISS]
+- [SOLID Principles][solid]
+- [Don't Repeat Yourself][dry]
+- [Keep it simple, stupid][kiss]
 - Small and fast
 - Works well with containerization
 - Focus on testing
@@ -133,26 +134,48 @@ See nest.js [Exception filters].
 
 See nest.js [Logger].
 
+## Setup [GOCD CI pipeline]
+
+A CI pipeline allows you to check your service's code for issues by running lints and various tests. Once the code is found to be free of defects, a docker build for the service is created and pushed to the common docker repository i.e. Amazon ECR.
+
+You can visit https://docs.gocd.org/current/introduction/concepts_in_go.html for basic concepts of GOCD
+
+Link to ContentStack GOCD - (https://dev-zizjm2h5y7nj-gocd.contentstack.com/)
+
+Raise a ticket in [Cloud Release Management](https://contentstack.atlassian.net/secure/RapidBoard.jspa?rapidView=65&projectKey=CS) board for onboarding to GoCD as a developer. You must have access to create and view [Config Repositories](<(https://docs.gocd.org/current/advanced_usage/config_repo.html)>).
+
+Add the pipeline [pipelines.gocd.yaml](https://github.com/contentstack/api-starter-kit/blob/master/pipelines.gocd.yaml) to the root directory of your service and adapt it to your needs.
+
+A "pipeline group" defined in yaml file is a set of pipelines for related services. For example, all CI/CD pipelines for Personalization services, comes under the "personalization" pipeline group. Each pipeline defined membership of the pipeline group in the pipeline YAML file. Once you adapt the name of the pipeline group for your service, you must also get access to it as part of the ticket raised with Cloud Release Management.
+
+Raise a ticket in [Cloud Release Management](https://contentstack.atlassian.net/secure/RapidBoard.jspa?rapidView=65&projectKey=CS) board for access to Amazon ECR and to create a new ECR repository with a name resembling to service name. You must have access to view and pull images from ECR.
+
+Adapt the image name in the pipeline YAML to match your service.
+
+Add your service repository as a Config Repository in GoCD.
+<img width="1563" alt="Screenshot 2020-09-14 at 4 18 58 PM" src="https://user-images.githubusercontent.com/69461422/93077605-a915be80-f6a6-11ea-8bcf-c14faeb8b867.png">
+
+Check if your pipelines are running successfully.
+
 ## Next steps
 
 Here's a tip to get more confortable with the framework before you start developing. In the `TodoModule`, we have defined Create, Retrieve and Update endpoints. Try implementing a Delete endpoint, along with all the corresponding tests.
 
-
 [nest.js]: https://nestjs.com/
 [nest.js fundamentals]: https://docs.nestjs.com/first-steps
 [12-factor]: https://12factor.net/
-[SOLID]: https://en.wikipedia.org/wiki/SOLID
-[DRY]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
-[KISS]: https://en.wikipedia.org/wiki/KISS_principle
-[MongoDB]: https://www.mongodb.com/
+[solid]: https://en.wikipedia.org/wiki/SOLID
+[dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
+[kiss]: https://en.wikipedia.org/wiki/KISS_principle
+[mongodb]: https://www.mongodb.com/
 [mongodb-setup]: https://docs.mongodb.com/manual/installation/#mongodb-community-edition-installation-tutorials
 [supertest]: https://www.npmjs.com/package/supertest
-[Mongoose]: https://mongoosejs.com/
+[mongoose]: https://mongoosejs.com/
 [migrate-mongo]: https://www.npmjs.com/package/migrate-mongo
 [schema-validation]: https://docs.mongodb.com/manual/core/schema-validation/
 [dotenv]: https://www.npmjs.com/package/dotenv
 [12-factor-configuration]: https://12factor.net/config
-[nest.js Terminus]: https://docs.nestjs.com/recipes/terminus
-[Exception filters]: https://docs.nestjs.com/exception-filters
-[Logger]: https://docs.nestjs.com/techniques/logger
+[nest.js terminus]: https://docs.nestjs.com/recipes/terminus
+[exception filters]: https://docs.nestjs.com/exception-filters
+[logger]: https://docs.nestjs.com/techniques/logger
 [mongodb-memory-server]: https://github.com/nodkz/mongodb-memory-server
