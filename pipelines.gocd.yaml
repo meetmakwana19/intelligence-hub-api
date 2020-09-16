@@ -1,0 +1,67 @@
+format_version: 3
+pipelines:
+  api-starter-kit-build-test-publish:
+    group: api-starter-kit
+    label_template: ${COUNT}
+    lock_behavior: none
+    display_order: -1
+    materials:
+      git:
+        git: git@github.com:contentstack/api-starter-kit.git
+        shallow_clone: false
+        auto_update: true
+        branch: master
+    stages:
+      - lint-and-test:
+          fetch_materials: true
+          keep_artifacts: false
+          clean_workspace: false
+          approval:
+            type: success
+            allow_only_on_success: false
+          jobs:
+            lint-and-test:
+              elastic_profile_id: k8s-npm-build
+              timeout: 0
+              tasks:
+                - exec:
+                    arguments:
+                      - install
+                    command: npm
+                    run_if: passed
+                - exec:
+                    arguments:
+                      - run
+                      - lint
+                    command: npm
+                    run_if: passed
+                - exec:
+                    arguments:
+                      - test
+                    command: npm
+                    run_if: passed
+      - build-and-publish:
+          fetch_materials: true
+          keep_artifacts: false
+          clean_workspace: false
+          approval:
+            type: success
+            allow_only_on_success: false
+          jobs:
+            build-and-publish:
+              elastic_profile_id: k8s-dev-build-dind
+              timeout: 0
+              artifacts:
+                - external:
+                    id: api-starter-kit-docker-image
+                    store_id: aws-ecr-registry-dev
+                    configuration:
+                      options:
+                        Image: 773588914490.dkr.ecr.us-west-2.amazonaws.com/api-starter-kit:latest
+              tasks:
+                - exec:
+                    arguments:
+                      - -c
+                      - docker build . -t 773588914490.dkr.ecr.us-west-2.amazonaws.com/api-starter-kit:latest
+                    command: sh
+                    run_if: passed
