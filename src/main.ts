@@ -14,7 +14,6 @@ import { AppModule } from './app.module';
 import {
   AllExceptionsFilter,
   I18nService,
-  RequestMiddleware,
   TimeoutInterceptor,
 } from './framework/utils';
 
@@ -25,7 +24,6 @@ async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(AppModule, fastify);
 
   app.useLogger(app.get(PinoLogger));
-  app.use(RequestMiddleware);
 
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
 
