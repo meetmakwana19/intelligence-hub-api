@@ -5,7 +5,10 @@ import {
   Logger,
   Module,
 } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
+import {
+  ConfigModule,
+  ConfigService,
+} from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { TerminusModule } from '@nestjs/terminus';
 
@@ -17,8 +20,8 @@ import {
   MongoDBConfig,
 } from './framework/config';
 import { I18nConfig } from './framework/config/i18n.config';
+import { LoggerConfigService } from './framework/config/logger-config.service';
 import { MongooseConfigService } from './framework/config/mongoose-config.service';
-import { pinoHTTPLoggerOptions } from './framework/logger';
 import { APP_DB } from './framework/utils';
 import { I18nModule } from './framework/utils/i18n/i18n.module';
 
@@ -29,7 +32,11 @@ import { I18nModule } from './framework/utils/i18n/i18n.module';
       useClass: MongooseConfigService,
     }),
     ConfigModule.forRoot(loadConfig()),
-    LoggerModule.forRoot({ pinoHttp: pinoHTTPLoggerOptions() }),
+    LoggerModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: LoggerConfigService
+    }),
     I18nModule.register(I18nConfig()),
     MongoDBFactory.connect(MongoDBConfig()(APP_DB)),
     MongooseModule.forRoot('mongodb://localhost/todo'),

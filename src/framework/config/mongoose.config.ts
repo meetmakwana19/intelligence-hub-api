@@ -9,8 +9,8 @@ export const mongooseConfig = (): MongooseModuleOptions => ({
   },
 });
 
-export const validationSchema = Joi.object({
+export const mongooseValidationSchema = {
   PORT: Joi.number().required(),
   MONGO_DB_URI: Joi.string().required(),
   MONGO_DB_NAME: Joi.string().required(),
-});
+};
