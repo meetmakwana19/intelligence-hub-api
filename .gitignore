@@ -35,6 +35,7 @@ lerna-debug.log*
 
 # dotenv
 .env
+.npmrc
 
 # test reporter
 test-reporter.xml
