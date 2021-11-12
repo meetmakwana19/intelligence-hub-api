@@ -1,4 +1,12 @@
-import { Body, Controller, Get, NotFoundException, Param, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  NotFoundException,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 
 import { CreateTodo } from '../models/create-todo.model';
 import { ObjectIdParam } from '../models/object-id.param';
@@ -8,7 +16,7 @@ import { TodoService } from '../services/todo.service';
 
 @Controller('todos')
 export class TodoController {
-  constructor(private todoService: TodoService) {}
+  constructor(private todoService: TodoService) { }
 
   @Post()
   async create(@Body() todo: CreateTodo): Promise<Todo> {

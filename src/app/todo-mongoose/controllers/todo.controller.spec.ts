@@ -1,9 +1,22 @@
-import { INestApplication, ValidationPipe } from '@nestjs/common';
-import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
-import { Test, TestingModule } from '@nestjs/testing';
 import { Types } from 'mongoose';
-import { err, ok } from 'neverthrow';
+import {
+  err,
+  ok,
+} from 'neverthrow';
 import * as request from 'supertest';
+
+import {
+  INestApplication,
+  ValidationPipe,
+} from '@nestjs/common';
+import {
+  FastifyAdapter,
+  NestFastifyApplication,
+} from '@nestjs/platform-fastify';
+import {
+  Test,
+  TestingModule,
+} from '@nestjs/testing';
 
 import { TodoNotFound } from '../errors/todo.errors';
 import { CreateTodo } from '../models/create-todo.model';
@@ -14,7 +27,7 @@ import { TodoController } from './todo.controller';
 describe('Todo Controller', () => {
   let app: INestApplication;
   let todoService: TodoService;
-  const expectedTodo = { _id: Types.ObjectId(), text: 'buy milk', completed: false };
+  const expectedTodo = { _id: new Types.ObjectId(), text: 'buy milk', completed: false };
 
   function toJSON(document: any) {
     return JSON.parse(JSON.stringify(document));

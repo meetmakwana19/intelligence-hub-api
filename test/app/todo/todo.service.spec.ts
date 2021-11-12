@@ -1,5 +1,8 @@
-import { DAL } from '@contentstack/mongodb';
-import { Test, TestingModule } from '@nestjs/testing';
+import { DataAccessLevel } from '@contentstack/mongodb';
+import {
+  Test,
+  TestingModule,
+} from '@nestjs/testing';
 
 import { TodoService } from '../../../src/app/todo-mongodb/todo.service';
 import { APP_DB } from '../../../src/framework/utils';
@@ -14,7 +17,7 @@ describe('TodoService', () => {
   beforeAll(async () => {
     const db = await dbHelper.start();
     const module: TestingModule = await Test.createTestingModule({
-      providers: [TodoService, TestDbHelper.getProvider(APP_DB, db, DAL.FULL_ACCESS)],
+      providers: [TodoService, TestDbHelper.getProvider(APP_DB, db, DataAccessLevel.FULL_ACCESS)],
     }).compile();
 
     service = module.get<TodoService>(TodoService);

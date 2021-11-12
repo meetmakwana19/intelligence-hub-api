@@ -1,4 +1,8 @@
-import { Collection, DAL, DAO, InjectDAO } from '@contentstack/mongodb';
+import {
+  Collection,
+  DataAccessLevel,
+  InjectDAO,
+} from '@contentstack/mongodb';
 import { Injectable } from '@nestjs/common';
 
 import { APP_DB } from '../../framework/utils';
@@ -8,7 +12,7 @@ import { Todo } from './todo.interface';
 export class TodoService {
   private readonly todo: Collection;
 
-  constructor(@InjectDAO(APP_DB, DAL.FULL_ACCESS) private db: DAO) {
+  constructor(@InjectDAO(APP_DB, DataAccessLevel.FULL_ACCESS) private db) {
     this.todo = db.collection('todo');
   }
 

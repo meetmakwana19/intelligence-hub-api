@@ -1,7 +1,7 @@
-import { MongoDBOptions } from '@contentstack/mongodb';
+import { format } from 'util';
+
 import { Logger } from '@nestjs/common';
 import { registerAs } from '@nestjs/config';
-import { format } from 'util';
 
 type host = Record<string, unknown>;
 
@@ -24,7 +24,7 @@ export const MongoDBConfig = registerAs(
   'MONGODB',
   // eslint-disable-next-line @typescript-eslint/ban-types
   (): Function => {
-    return (name: string): MongoDBOptions => {
+    return (name: string) => {
       //TODO: validation
       try {
         const database = process.env[name + '_DBNAME'] || null;

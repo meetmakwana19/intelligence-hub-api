@@ -3,7 +3,9 @@ import { LoggerModule } from 'nestjs-pino';
 import { MongoDBFactory } from '@contentstack/mongodb';
 import {
   Logger,
+  MiddlewareConsumer,
   Module,
+  NestModule,
 } from '@nestjs/common';
 import {
   ConfigModule,
@@ -22,6 +24,7 @@ import {
 import { I18nConfig } from './framework/config/i18n.config';
 import { LoggerConfigService } from './framework/config/logger-config.service';
 import { MongooseConfigService } from './framework/config/mongoose-config.service';
+import { AppLoggerMiddleware } from './framework/logger/logger.middleware';
 import { APP_DB } from './framework/utils';
 import { I18nModule } from './framework/utils/i18n/i18n.module';
 
@@ -47,11 +50,15 @@ import { I18nModule } from './framework/utils/i18n/i18n.module';
   controllers: [HealthController],
   providers: [],
 })
-export class AppModule {
+export class AppModule implements NestModule {
   private readonly logger = new Logger(AppModule.name)
 
   onApplicationBootstrap(): void {
     this.logger.log('Loading app module...');
+  }
+
+  configure(consumer: MiddlewareConsumer): void {
+    consumer.apply(AppLoggerMiddleware).forRoutes('*');
   }
 
   onApplicationShutdown(): void {

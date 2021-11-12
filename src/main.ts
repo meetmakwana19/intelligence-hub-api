@@ -21,7 +21,7 @@ async function bootstrap() {
   const logger = new Logger('ApplicationBootstrap');
   const fastify = new FastifyAdapter({});
 
-  const app = await NestFactory.create<NestFastifyApplication>(AppModule, fastify);
+  const app = await NestFactory.create<NestFastifyApplication>(AppModule, fastify, { bufferLogs: true });
 
   app.useLogger(app.get(PinoLogger));
 

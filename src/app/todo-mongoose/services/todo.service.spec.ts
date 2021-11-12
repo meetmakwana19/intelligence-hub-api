@@ -38,7 +38,7 @@ describe('TodoService', () => {
   });
 
   it('updates todo', async () => {
-    const todoId = Types.ObjectId();
+    const todoId = new Types.ObjectId();
     const updateTodo: UpdateTodo = { text: 'buy milk', completed: true };
     const findByIdSpy = jest.spyOn(todoModel, 'findById').mockImplementation(() => Promise.resolve(todoModelInstance));
 
@@ -51,7 +51,7 @@ describe('TodoService', () => {
   });
 
   it('throws an error when todo not found', async () => {
-    const todoId = Types.ObjectId();
+    const todoId = new Types.ObjectId();
     const updateTodo: UpdateTodo = { text: 'buy milk', completed: true };
     const findByIdSpy = jest.spyOn(todoModel, 'findById').mockImplementation(() => Promise.resolve(undefined));
 
