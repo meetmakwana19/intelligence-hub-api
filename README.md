@@ -1,1 +1,1 @@
-# Intelligence-Hub-api
+# intelligence-hub-api
