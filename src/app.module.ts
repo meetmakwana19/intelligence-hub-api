@@ -27,6 +27,7 @@ import { MongooseConfigService } from './framework/config/mongoose-config.servic
 import { AppLoggerMiddleware } from './framework/logger/logger.middleware';
 import { APP_DB } from './framework/utils';
 import { I18nModule } from './framework/utils/i18n/i18n.module';
+import { FrameworksModule } from './app/frameworks/frameworks.module';
 
 @Module({
   imports: [
@@ -46,6 +47,7 @@ import { I18nModule } from './framework/utils/i18n/i18n.module';
     TodoModuleMongoDB,
     TodoModuleMoongoose,
     TerminusModule,
+    FrameworksModule,
   ],
   controllers: [HealthController],
   providers: [],
