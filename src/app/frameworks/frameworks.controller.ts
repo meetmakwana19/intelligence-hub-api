@@ -28,7 +28,7 @@ export class FrameworksController {
     }
 
     @Get(":id")
-    getFramework(@Param("id") prodId: string){
+    getFramework(@Param("id") prodId: any){
         return this.frameworksService.getSingleFramework(prodId);
     }
 

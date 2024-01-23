@@ -1,12 +1,14 @@
 import { Module } from "@nestjs/common";
 import { FrameworksController } from "./frameworks.controller";
 import { FrameworksService } from "./frameworks.service";
-import { Mongoose } from "mongoose";
 import { MongooseModule } from "@nestjs/mongoose";
-import { FrameworkSchema } from "../frameworks-mongoose/models/framework.model";
+import { FrameworkSchema } from "./frameworks.model";
 
 @Module({
-    imports: [MongooseModule.forFeature([{ name: "Framework", schema: FrameworkSchema}])],
+    imports: [
+        // The MongooseModule provides the forFeature() method to configure the module, including defining which models should be registered in the current scope.
+        MongooseModule.forFeature([{ name: "framework", schema: FrameworkSchema}])
+    ],
     controllers: [FrameworksController],
     providers: [FrameworksService]
 })

@@ -31,10 +31,10 @@ import { FrameworksModule } from './app/frameworks/frameworks.module';
 
 @Module({
   imports: [
-    MongooseModule.forRootAsync({
-      imports: [ConfigModule],
-      useClass: MongooseConfigService,
-    }),
+    // MongooseModule.forRootAsync({
+    //   imports: [ConfigModule],
+    //   useClass: MongooseConfigService,
+    // }),
     ConfigModule.forRoot(loadConfig()),
     LoggerModule.forRootAsync({
       imports: [ConfigModule],
@@ -42,11 +42,13 @@ import { FrameworksModule } from './app/frameworks/frameworks.module';
       useFactory: LoggerConfigService
     }),
     I18nModule.register(I18nConfig()),
-    MongoDBFactory.connect(MongoDBConfig()(APP_DB)),
-    MongooseModule.forRoot('mongodb://localhost/todo'),
-    TodoModuleMongoDB,
-    TodoModuleMoongoose,
+    // MongoDBFactory.connect(MongoDBConfig()("INTELLIGENCE")),
+    // MongooseModule.forRoot('mongodb://localhost/todo'),
+    // TodoModuleMongoDB,
+    // TodoModuleMoongoose,
     TerminusModule,
+    // forRoot is similar like mongoose.connect() method.
+    MongooseModule.forRoot('mongodb://localhost:27017/intelligence'),
     FrameworksModule,
   ],
   controllers: [HealthController],

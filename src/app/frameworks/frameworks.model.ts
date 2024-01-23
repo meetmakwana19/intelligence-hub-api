@@ -1,14 +1,24 @@
-export class Framework {
-    // id: string;
-    // title: string;
-    // description: string;
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { Document } from 'mongoose';
 
-    // adding the `public` accessor in the constructor parameters, Nest automatically creates the equally names property
-    constructor(public id: string, public title: string, public description: string){
+export interface Framework {
+    title: string;
+    description: string;
+  }
+  
+// Schemas can be created with NestJS decorators, or with Mongoose itself manually. Using decorators to create schemas greatly reduces boilerplate and improves overall code readability.
+// The @Schema() decorator marks a class as a schema definition.
+// it is like mongoose.Schema()
+@Schema()
+export class FrameworkModel extends Document implements Framework {
 
-        // this.id = id;
-        // this.title = title;
-        // this.description = description;
+    // @Prop() decorator defines a property in the document.
+    @Prop({ required: true })
+    title: string;
 
-    }
+    @Prop({ required: true })
+    description: string;
+
 }
+
+export const FrameworkSchema = SchemaFactory.createForClass(FrameworkModel);
