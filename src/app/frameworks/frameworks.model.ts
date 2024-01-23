@@ -13,6 +13,9 @@ export interface Framework {
 export class FrameworkModel extends Document implements Framework {
 
     // @Prop() decorator defines a property in the document.
+    @Prop({ unique: true, required: true })
+    uid: string;
+
     @Prop({ required: true })
     title: string;
 

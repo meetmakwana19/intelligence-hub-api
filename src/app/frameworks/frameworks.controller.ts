@@ -28,21 +28,21 @@ export class FrameworksController {
     }
 
     @Get(":id")
-    getFramework(@Param("id") prodId: any){
-        return this.frameworksService.getSingleFramework(prodId);
+    getFramework(@Param("id") uid: any){
+        return this.frameworksService.getSingleFramework(uid);
     }
 
     @Patch(":id")
     updateFramework(
-        @Param("id") prodId: string,
+        @Param("id") uid: string,
         @Body("title") prodTitle: string,
         @Body("description") prodDescription: string,
     ){
-        return this.frameworksService.updateFramework(prodId, prodTitle, prodDescription)
+        return this.frameworksService.updateFramework(uid, prodTitle, prodDescription)
     }
 
     @Delete(":id")
-    deleteFramework(@Param("id") prodId: string){
-        return this.frameworksService.removeFramework(prodId);
+    deleteFramework(@Param("id") uid: string){
+        return this.frameworksService.removeFramework(uid);
     }
 }
