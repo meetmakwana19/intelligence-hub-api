@@ -28,20 +28,17 @@ export class FrameworksService {
     let uid = uuidv4(); // ⇨ '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
     uid = uid.replace(/-/g, "");
     uid = "blt" + uid;
-    console.log("uid --------------- ", uid);
-
 
     // const prodId = Math.floor(Math.random() * 10 ** 5).toString();
     // const newFramework = new Framework(prodId, title, description);
     // console.log(this.frameworkModel.findOne());
-    await this.frameworkModel.create([
+    return await this.frameworkModel.create([
       {
         uid,
         title,
         description,
       },
     ]);
-    return true;
   }
 
   async getFrameworks() {

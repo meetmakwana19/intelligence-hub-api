@@ -9,16 +9,14 @@ export class FrameworksController {
 
     }
     @Post()
-    addFramework(
+    async addFramework(
         // @Body() completeBody: {title: string, description: string},
         @Body("title") prodTitle: string,
         @Body("description") prodDescription: string,
-    ): any {
-        const generatedResponse = this.frameworksService.insertFramework(prodTitle, prodDescription);
-
-        return {
-            id: generatedResponse
-        };
+    ): Promise<any> {
+        const generatedResponse = await this.frameworksService.insertFramework(prodTitle, prodDescription);
+        
+        return generatedResponse;
 
     }
     
