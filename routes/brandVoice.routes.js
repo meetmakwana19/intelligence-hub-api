@@ -17,6 +17,7 @@ brandVoiceRouter.get("/", (req, res) => {
 
 brandVoiceRouter.post("/", (req, res) => {
     const newVoice = req.body;
+    console.log("New voice is ", newVoice);
     return utils.readVoices()
     .then((data) => {
         data.push(newVoice)
