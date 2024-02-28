@@ -11,6 +11,7 @@ app.use(cors());
 app.use("/brand-voice", router.brandVoiceRouter);
 app.use("/user-tone", router.userToneRouter);
 app.use("/knowledge-base", router.knowledgeBaseRouter);
+app.use("/frameworks", router.frameworksRouter);
 
 app.get("/greeting", (req, res) => {
   return res.send("Greetings from Intelligence Hub API.");

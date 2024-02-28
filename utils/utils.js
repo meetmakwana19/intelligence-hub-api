@@ -22,6 +22,12 @@ function readKnowledge() {
     return JSON.parse(data.toString());
   });
 }
+function readFrameworks() {
+  return fs.readFile("frameworks.json", "utf-8").then((data) => {
+    console.log("data is ", data);
+    return JSON.parse(data.toString());
+  });
+}
 
 module.exports = {
   // readData: readData
@@ -29,4 +35,5 @@ module.exports = {
   readProfiles,
   readTones,
   readKnowledge,
+  readFrameworks,
 };
