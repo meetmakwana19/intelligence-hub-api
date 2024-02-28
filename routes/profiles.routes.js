@@ -2,14 +2,14 @@ const express = require("express");
 const utils = require("../utils/utils");
 const fs = require("fs/promises");
 
-const brandVoiceRouter = express.Router();
+const profilesRouter = express.Router();
 
 // TODO: rowActionList- Edit(Update), Delete(Delete)
 
 // Pagination middleware
 const paginateResults = require("../middleware/paginationMiddleware");
 
-brandVoiceRouter.get("/:profileId", async (req, res) => {
+profilesRouter.get("/:profileId", async (req, res) => {
   const { profileId } = req.params; // Extracting profileId from URL parameters
 
   try {
@@ -34,7 +34,7 @@ brandVoiceRouter.get("/:profileId", async (req, res) => {
   }
 });
 
-brandVoiceRouter.get("/", (req, res) => {
+profilesRouter.get("/", (req, res) => {
   const startIndex = parseInt(req.query.startIndex) || 0;
   const limit = parseInt(req.query.limit) || 30;
 
@@ -43,7 +43,7 @@ brandVoiceRouter.get("/", (req, res) => {
     const totalCount = data.length; // Calculate total count
 
     res.status(200).json({
-      message: "All voices fetched.",
+      message: "All Profiles fetched.",
       data: {
         totalCount,
         paginatedData,
@@ -53,25 +53,39 @@ brandVoiceRouter.get("/", (req, res) => {
   });
 });
 
-brandVoiceRouter.post("/", (req, res) => {
-  const newVoice = req.body;
-  return utils
-    .readProfiles()
-    .then((data) => {
-      data.push(newVoice);
+profilesRouter.post("/", async (req, res) => {
+  try {
+    const newProfilesBase = req.body;
+    const data = await utils.readProfiles(); // Assume this reads and parses the JSON file into an array
 
-      return fs.writeFile("profiles.json", JSON.stringify(data));
-    })
-    .then(() => {
-      return res.status(201).json({
-        message: "New voice added",
-        data: newVoice,
-        error: null,
-      });
+    // Determine the next ID
+    const maxId = data.reduce((max, item) => Math.max(max, item.id), 0);
+    const newProfiles = {
+      ...newProfilesBase,
+      id: (maxId + 1).toString(), // Increment the maximum ID found
+      createdAt: new Date().toISOString(),
+      modifiedAt: new Date().toISOString(),
+    };
+
+    data.push(newProfiles);
+
+    await fs.writeFile("profiles.json", JSON.stringify(data, null, 2)); // Write the updated array back to the file
+
+    res.status(201).json({
+      message: "New Profile added",
+      data: newProfiles,
+      error: null,
     });
+  } catch (error) {
+    console.error("Error adding new profiles:", error);
+    res.status(500).json({
+      message: "Error adding new profile",
+      error: error.message,
+    });
+  }
 });
 
-brandVoiceRouter.put("/:profileId", async (req, res) => {
+profilesRouter.put("/:profileId", async (req, res) => {
   const { profileId } = req.params; // Extract profile ID from URL parameters
   const updatedProfile = req.body; // Get the updated profile data from the request body
 
@@ -103,4 +117,4 @@ brandVoiceRouter.put("/:profileId", async (req, res) => {
   }
 });
 
-module.exports = brandVoiceRouter;
+module.exports = profilesRouter;
