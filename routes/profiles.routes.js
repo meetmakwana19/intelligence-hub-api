@@ -9,6 +9,39 @@ const profilesRouter = express.Router();
 // Pagination middleware
 const paginateResults = require("../middleware/paginationMiddleware");
 
+profilesRouter.delete("/:profileId", async (req, res) => {
+  const { profileId } = req.params; // Extract Profile ID from URL parameters
+
+  try {
+    const data = await utils.readProfiles(); // Read all profiles
+    const profileIndex = data.findIndex((p) => p.id === profileId); //Find the specific profileId that needs to be deleted
+
+    if (profileIndex === -1) {
+      //If Id not found send 404 error
+      return res
+        .status(404)
+        .json({ message: "Profile not found", error: null });
+    }
+
+    // Remove profile from the data
+    data.splice(profileIndex, 1);
+
+    // Write the updated data back into the file
+    await fs.writeFile("profiles.json", JSON.stringify(data, null, 2));
+
+    // Success response
+    res.status(200).json({
+      message: "Profile deleted successfully.",
+      error: null,
+    });
+  } catch (error) {
+    // Error Handling
+    res
+      .status(500)
+      .json({ message: "Error deleting profile", error: error.message });
+  }
+});
+
 profilesRouter.get("/:profileId", async (req, res) => {
   const { profileId } = req.params; // Extracting profileId from URL parameters
 

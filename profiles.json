@@ -33,7 +33,7 @@
   },
   {
     "id": "3",
-    "title": "Google",
+    "title": "Google2",
     "createdBy": "Alex Johnson",
     "createdAt": "2024-01-10T14:56:42Z",
     "modifiedAt": "2024-01-15T10:30:00Z",
@@ -1118,34 +1118,6 @@
       "innovation",
       "business services"
     ]
-  },
-  {
-    "id": "72",
-    "title": "omsai",
-    "createdBy": "Charles Ranlett Flint",
-    "createdAt": "2024-02-28T12:04:46.444Z",
-    "modifiedAt": "2024-02-28T12:04:46.444Z",
-    "stacks": "Technology, Computing",
-    "contentType": "Service",
-    "description": "oibov",
-    "tags": [
-      "wv",
-      "oubobv"
-    ]
-  },
-  {
-    "title": "Yashesh",
-    "description": "JAWD admi",
-    "tags": [
-      "dancing",
-      "dune"
-    ],
-    "id": "73",
-    "createdAt": "2024-02-28T12:11:35.102Z",
-    "modifiedAt": "2024-02-28T12:11:35.102Z",
-    "createdBy": "YourLogicHere",
-    "stacks": "Technology, Computing",
-    "contentType": "Service"
   },
   {
     "title": "Toshiba",
