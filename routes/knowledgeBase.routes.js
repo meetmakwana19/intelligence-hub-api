@@ -4,12 +4,25 @@ const fs =require("fs/promises")
 
 const knowledgeBaseRouter = express.Router();
 
+// Pagination middleware
+const paginateResults = require("../middleware/paginationMiddleware")
+
+
 knowledgeBaseRouter.get("/", (req, res) => {
+    const startIndex = parseInt(req.query.startIndex) || 0;
+    const limit = parseInt(req.query.limit) || 30;
+
     return utils.readKnowledge()
     .then((data) => {
+        const paginatedData = paginateResults(data, startIndex, limit);
+        const totalCount = data.length; // Calculate total count
+
         res.status(200).json({
             message: "All knowledge bases fetched.",
-            data,
+            data: {
+                totalCount,
+                paginatedData,
+            },
             error: null,
         })
     })
