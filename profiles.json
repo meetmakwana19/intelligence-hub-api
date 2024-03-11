@@ -1,0 +1,1147 @@
+[
+  {
+    "id": "1",
+    "title": "Apple",
+    "createdBy": "John Doe",
+    "createdAt": "2024-01-10T12:34:56Z",
+    "modifiedAt": "2024-01-15T08:30:00Z",
+    "stacks": "iOS, macOS, wearables",
+    "contentType": "Product",
+    "description": "Innovative technology and electronics company known for its smartphones, tablets, and computers.",
+    "tags": [
+      "technology",
+      "electronics",
+      "smartphones",
+      "computers"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Nike",
+    "createdBy": "Jane Smith",
+    "createdAt": "2024-01-10T13:45:23Z",
+    "modifiedAt": "2024-01-15T09:30:00Z",
+    "stacks": "Athletic wear, sports equipment",
+    "contentType": "Product",
+    "description": "Adibas, Nika, Uima",
+    "tags": [
+      "athletic",
+      "footwear",
+      "apparel",
+      "sports"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Google2",
+    "createdBy": "Alex Johnson",
+    "createdAt": "2024-01-10T14:56:42Z",
+    "modifiedAt": "2024-01-15T10:30:00Z",
+    "stacks": "Search, Cloud, Android",
+    "contentType": "Service",
+    "description": "Leading multinational technology company specializing in internet-related services and products.",
+    "tags": [
+      "technology",
+      "internet",
+      "search engine",
+      "software"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Disney",
+    "createdBy": "Emily Davis",
+    "createdAt": "2024-01-10T15:30:18Z",
+    "modifiedAt": "2024-01-15T11:30:00Z",
+    "stacks": "Entertainment, Media",
+    "contentType": "Media",
+    "description": "Premier entertainment company offering movies, TV shows, theme parks, and merchandise.",
+    "tags": [
+      "entertainment",
+      "movies",
+      "theme parks",
+      "television"
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Harley-Davidson",
+    "createdBy": "Mark Anderson",
+    "createdAt": "2024-01-10T16:12:37Z",
+    "modifiedAt": "2024-01-15T12:30:00Z",
+    "stacks": "Motorcycles, Apparel",
+    "contentType": "Product",
+    "description": "Iconic American motorcycle manufacturer known for its heavyweight motorcycles.",
+    "tags": [
+      "motorcycles",
+      "automotive",
+      "heavyweight bikes"
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Amazon",
+    "createdBy": "Sophia Lee",
+    "createdAt": "2024-01-10T17:28:54Z",
+    "modifiedAt": "2024-01-15T13:30:00Z",
+    "stacks": "E-commerce, AWS",
+    "contentType": "Service",
+    "description": "Global e-commerce and cloud computing giant.",
+    "tags": [
+      "e-commerce",
+      "cloud computing",
+      "technology",
+      "retail"
+    ]
+  },
+  {
+    "id": "7",
+    "title": "Coca-Cola",
+    "createdBy": "Chris Miller",
+    "createdAt": "2024-01-10T18:45:09Z",
+    "modifiedAt": "2024-01-15T14:30:00Z",
+    "stacks": "Beverages",
+    "contentType": "Product",
+    "description": "World-renowned beverage company offering soft drinks in multiple flavors.",
+    "tags": [
+      "beverages",
+      "soft drinks",
+      "global brand"
+    ]
+  },
+  {
+    "id": "8",
+    "title": "Red Bull",
+    "createdBy": "Eva Taylor",
+    "createdAt": "2024-01-10T19:20:33Z",
+    "modifiedAt": "2024-01-15T15:30:00Z",
+    "stacks": "Energy drinks, Media",
+    "contentType": "Product",
+    "description": "Leading energy drink brand known for its marketing and sponsorship in extreme sports.",
+    "tags": [
+      "energy drinks",
+      "beverages",
+      "sports marketing"
+    ]
+  },
+  {
+    "id": "9",
+    "title": "IBM",
+    "createdBy": "Ryan Brown",
+    "createdAt": "2024-01-10T20:09:47Z",
+    "modifiedAt": "2024-01-15T16:30:00Z",
+    "stacks": "Cloud, AI, Hardware",
+    "contentType": "Service",
+    "description": "Global technology and consulting company known for its hardware, software, and services.",
+    "tags": [
+      "technology",
+      "consulting",
+      "hardware",
+      "software"
+    ]
+  },
+  {
+    "id": "10",
+    "title": "Netflix",
+    "createdBy": "Olivia White",
+    "createdAt": "2024-01-10T21:37:15Z",
+    "modifiedAt": "2024-01-15T17:30:00Z",
+    "stacks": "Streaming, Media Production",
+    "contentType": "Media",
+    "description": "Leading streaming entertainment service offering movies and TV series.",
+    "tags": [
+      "streaming",
+      "entertainment",
+      "movies",
+      "television"
+    ]
+  },
+  {
+    "id": "11",
+    "title": "Spotify",
+    "createdBy": "Daniel Ek",
+    "createdAt": "2024-02-01T10:20:30Z",
+    "modifiedAt": "2024-02-05T11:25:00Z",
+    "stacks": "Streaming, Music Technology",
+    "contentType": "Service",
+    "description": "Digital music service offering millions of songs, podcasts, and videos from artists all over the world.",
+    "tags": [
+      "music",
+      "streaming",
+      "podcasts",
+      "technology"
+    ]
+  },
+  {
+    "id": "12",
+    "title": "Microsoft",
+    "createdBy": "Bill Gates",
+    "createdAt": "2024-02-02T12:30:40Z",
+    "modifiedAt": "2024-02-06T13:35:00Z",
+    "stacks": "Software, Cloud Computing, Hardware",
+    "contentType": "Product",
+    "description": "Technology company known for its software products, cloud services, and hardware devices.",
+    "tags": [
+      "software",
+      "cloud computing",
+      "technology",
+      "hardware"
+    ]
+  },
+  {
+    "id": "13",
+    "title": "Tesla",
+    "createdBy": "Elon Musk",
+    "createdAt": "2024-02-03T14:40:50Z",
+    "modifiedAt": "2024-02-07T15:45:00Z",
+    "stacks": "Electric Vehicles, Energy Storage",
+    "contentType": "Product",
+    "description": "Automotive and energy company specializing in electric vehicles and sustainable energy.",
+    "tags": [
+      "electric vehicles",
+      "sustainable energy",
+      "innovation",
+      "technology"
+    ]
+  },
+  {
+    "id": "14",
+    "title": "Airbnb",
+    "createdBy": "Brian Chesky",
+    "createdAt": "2024-02-04T16:50:00Z",
+    "modifiedAt": "2024-02-08T17:55:00Z",
+    "stacks": "Online Marketplace, Hospitality",
+    "contentType": "Service",
+    "description": "Online platform for lodging, primarily homestays for vacation rentals, and tourism activities.",
+    "tags": [
+      "lodging",
+      "travel",
+      "hospitality",
+      "marketplace"
+    ]
+  },
+  {
+    "id": "15",
+    "title": "Samsung Electronics",
+    "createdBy": "Lee Byung-chul",
+    "createdAt": "2024-02-05T18:00:10Z",
+    "modifiedAt": "2024-02-09T19:05:00Z",
+    "stacks": "Electronics, Mobile Devices",
+    "contentType": "Product",
+    "description": "Multinational electronics company known for its mobile devices, TVs, and home appliances.",
+    "tags": [
+      "electronics",
+      "mobile devices",
+      "technology",
+      "home appliances"
+    ]
+  },
+  {
+    "id": "16",
+    "title": "Adidas",
+    "createdBy": "Adi Dassler",
+    "createdAt": "2024-02-06T20:10:20Z",
+    "modifiedAt": "2024-02-10T21:15:00Z",
+    "stacks": "Athletic Wear, Footwear",
+    "contentType": "Product",
+    "description": "Designs and manufactures shoes, clothing, and accessories, being the second-largest sportswear manufacturer in the world.",
+    "tags": [
+      "athletic wear",
+      "footwear",
+      "sportswear",
+      "accessories"
+    ]
+  },
+  {
+    "id": "17",
+    "title": "McDonald's",
+    "createdBy": "Ray Kroc",
+    "createdAt": "2024-02-07T22:20:30Z",
+    "modifiedAt": "2024-02-11T23:25:00Z",
+    "stacks": "Fast Food, Franchise",
+    "contentType": "Product",
+    "description": "American fast food company, known for its hamburgers, cheeseburgers, and french fries.",
+    "tags": [
+      "fast food",
+      "hamburgers",
+      "franchise",
+      "global brand"
+    ]
+  },
+  {
+    "id": "18",
+    "title": "Canon",
+    "createdBy": "Takeshi Mitarai",
+    "createdAt": "2024-02-08T24:30:40Z",
+    "modifiedAt": "2024-02-12T01:35:00Z",
+    "stacks": "Imaging, Optical Products",
+    "contentType": "Product",
+    "description": "Japanese multinational corporation specializing in the manufacture of imaging and optical products.",
+    "tags": [
+      "imaging",
+      "photography",
+      "optical products",
+      "electronics"
+    ]
+  },
+  {
+    "id": "19",
+    "title": "Lego",
+    "createdBy": "Ole Kirk Christiansen",
+    "createdAt": "2024-02-09T02:40:50Z",
+    "modifiedAt": "2024-02-13T03:45:00Z",
+    "stacks": "Toys, Entertainment",
+    "contentType": "Product",
+    "description": "Toy production company known for its line of plastic construction toys.",
+    "tags": [
+      "toys",
+      "construction",
+      "entertainment",
+      "education"
+    ]
+  },
+  {
+    "id": "20",
+    "title": "PayPal",
+    "createdBy": "Peter Thiel, Max Levchin",
+    "createdAt": "2024-02-10T04:50:00Z",
+    "modifiedAt": "2024-02-14T05:55:00Z",
+    "stacks": "Online Payments, Financial Technology",
+    "contentType": "Service",
+    "description": "Online payments system that supports online money transfers and serves as an electronic alternative to traditional paper methods.",
+    "tags": [
+      "online payments",
+      "financial technology",
+      "money transfer",
+      "e-commerce"
+    ]
+  },
+  {
+    "id": "21",
+    "title": "Intel",
+    "createdBy": "Robert Noyce",
+    "createdAt": "2024-02-11T06:00:10Z",
+    "modifiedAt": "2024-02-15T07:05:00Z",
+    "stacks": "Semiconductors, Microprocessors",
+    "contentType": "Product",
+    "description": "American multinational corporation and technology company, the world's largest semiconductor chip manufacturer.",
+    "tags": [
+      "semiconductors",
+      "microprocessors",
+      "technology",
+      "computing"
+    ]
+  },
+  {
+    "id": "22",
+    "title": "Uber",
+    "createdBy": "Travis Kalanick",
+    "createdAt": "2024-02-12T08:10:20Z",
+    "modifiedAt": "2024-02-16T09:15:00Z",
+    "stacks": "Ride-Hailing, Food Delivery",
+    "contentType": "Service",
+    "description": "American technology company offering ride-hailing services, food delivery, and a freight platform.",
+    "tags": [
+      "ride-hailing",
+      "food delivery",
+      "technology",
+      "transportation"
+    ]
+  },
+  {
+    "id": "23",
+    "title": "Unilever",
+    "createdBy": "William Hulme Lever",
+    "createdAt": "2024-02-13T10:20:30Z",
+    "modifiedAt": "2024-02-17T11:25:00Z",
+    "stacks": "Consumer Goods",
+    "contentType": "Product",
+    "description": "British-Dutch multinational consumer goods company, products include food, condiments, ice cream, cleaning agents, beauty products, and personal care.",
+    "tags": [
+      "consumer goods",
+      "food",
+      "beauty",
+      "personal care"
+    ]
+  },
+  {
+    "id": "24",
+    "title": "Pfizer",
+    "createdBy": "Charles Pfizer",
+    "createdAt": "2024-02-14T12:30:40Z",
+    "modifiedAt": "2024-02-18T13:35:00Z",
+    "stacks": "Pharmaceuticals, Biotechnology",
+    "contentType": "Product",
+    "description": "American multinational pharmaceutical corporation, one of the world's largest pharmaceutical companies.",
+    "tags": [
+      "pharmaceuticals",
+      "biotechnology",
+      "medicine",
+      "healthcare"
+    ]
+  },
+  {
+    "id": "25",
+    "title": "Sony",
+    "createdBy": "Akio Morita",
+    "createdAt": "2024-02-15T14:40:50Z",
+    "modifiedAt": "2024-02-19T15:45:00Z",
+    "stacks": "Electronics, Entertainment, Gaming",
+    "contentType": "Product",
+    "description": "Japanese multinational conglomerate corporation, one of the leading manufacturers of electronic products.",
+    "tags": [
+      "electronics",
+      "entertainment",
+      "gaming",
+      "technology"
+    ]
+  },
+  {
+    "id": "26",
+    "title": "Zara",
+    "createdBy": "Amancio Ortega",
+    "createdAt": "2024-02-16T16:50:00Z",
+    "modifiedAt": "2024-02-20T17:55:00Z",
+    "stacks": "Fashion, Retail",
+    "contentType": "Product",
+    "description": "Spanish apparel retailer known for its fast fashion and trendy clothing items.",
+    "tags": [
+      "fashion",
+      "retail",
+      "clothing",
+      "apparel"
+    ]
+  },
+  {
+    "id": "27",
+    "title": "Boeing",
+    "createdBy": "William E. Boeing",
+    "createdAt": "2024-02-17T18:00:10Z",
+    "modifiedAt": "2024-02-21T19:05:00Z",
+    "stacks": "Aerospace, Defense",
+    "contentType": "Product",
+    "description": "American multinational corporation that designs, manufactures, and sells airplanes, rotorcraft, rockets, satellites, and telecommunications equipment.",
+    "tags": [
+      "aerospace",
+      "aviation",
+      "defense",
+      "technology"
+    ]
+  },
+  {
+    "id": "28",
+    "title": "Mastercard",
+    "createdBy": "Several banks",
+    "createdAt": "2024-02-18T20:10:20Z",
+    "modifiedAt": "2024-02-22T21:15:00Z",
+    "stacks": "Financial Services, Payment Systems",
+    "contentType": "Service",
+    "description": "American multinational financial services corporation, known for its credit, debit, and prepaid cards to process payments.",
+    "tags": [
+      "financial services",
+      "payment systems",
+      "banking",
+      "technology"
+    ]
+  },
+  {
+    "id": "29",
+    "title": "IKEA",
+    "createdBy": "Ingvar Kamprad",
+    "createdAt": "2024-02-19T22:20:30Z",
+    "modifiedAt": "2024-02-23T23:25:00Z",
+    "stacks": "Furniture, Home Goods",
+    "contentType": "Product",
+    "description": "Multinational group that designs and sells ready-to-assemble furniture, kitchen appliances, and home accessories.",
+    "tags": [
+      "furniture",
+      "home decor",
+      "design",
+      "sustainability"
+    ]
+  },
+  {
+    "id": "30",
+    "title": "Walmart",
+    "createdBy": "Sam Walton",
+    "createdAt": "2024-02-20T24:30:40Z",
+    "modifiedAt": "2024-02-24T01:35:00Z",
+    "stacks": "Retail, E-commerce",
+    "contentType": "Product",
+    "description": "American multinational retail corporation that operates a chain of hypermarkets, discount department stores, and grocery stores.",
+    "tags": [
+      "retail",
+      "e-commerce",
+      "shopping",
+      "supermarket"
+    ]
+  },
+  {
+    "id": "31",
+    "title": "PepsiCo",
+    "createdBy": "Caleb Bradham",
+    "createdAt": "2024-03-10T12:34:56Z",
+    "modifiedAt": "2024-03-15T08:30:00Z",
+    "stacks": "Beverages, Snack Foods",
+    "contentType": "Product",
+    "description": "Global food, snack, and beverage company.",
+    "tags": [
+      "beverages",
+      "snack foods",
+      "global brand"
+    ]
+  },
+  {
+    "id": "32",
+    "title": "Sony",
+    "createdBy": "Masaru Ibuka",
+    "createdAt": "2024-03-11T13:45:23Z",
+    "modifiedAt": "2024-03-15T09:30:00Z",
+    "stacks": "Electronics, Entertainment",
+    "contentType": "Product",
+    "description": "Multinational conglomerate corporation known for its electronic products.",
+    "tags": [
+      "electronics",
+      "entertainment",
+      "gaming",
+      "technology"
+    ]
+  },
+  {
+    "id": "33",
+    "title": "Visa",
+    "createdBy": "Dee Hock",
+    "createdAt": "2024-03-12T14:56:42Z",
+    "modifiedAt": "2024-03-15T10:30:00Z",
+    "stacks": "Financial Services",
+    "contentType": "Service",
+    "description": "American multinational financial services corporation.",
+    "tags": [
+      "financial services",
+      "payment technology",
+      "global network"
+    ]
+  },
+  {
+    "id": "34",
+    "title": "Walmart",
+    "createdBy": "Sam Walton",
+    "createdAt": "2024-03-13T15:30:18Z",
+    "modifiedAt": "2024-03-15T11:30:00Z",
+    "stacks": "Retail, E-commerce",
+    "contentType": "Product",
+    "description": "Multinational retail corporation that operates a chain of hypermarkets.",
+    "tags": [
+      "retail",
+      "e-commerce",
+      "supermarket",
+      "global brand"
+    ]
+  },
+  {
+    "id": "35",
+    "title": "Mastercard",
+    "createdBy": "Various Banks",
+    "createdAt": "2024-03-14T16:12:37Z",
+    "modifiedAt": "2024-03-15T12:30:00Z",
+    "stacks": "Financial Services",
+    "contentType": "Service",
+    "description": "American multinational financial services corporation.",
+    "tags": [
+      "financial services",
+      "payment systems",
+      "technology"
+    ]
+  },
+  {
+    "id": "36",
+    "title": "Nestlé",
+    "createdBy": "Henri Nestlé",
+    "createdAt": "2024-03-15T17:28:54Z",
+    "modifiedAt": "2024-03-15T13:30:00Z",
+    "stacks": "Food, Beverage",
+    "contentType": "Product",
+    "description": "Largest food company in the world, measured by revenues and other metrics.",
+    "tags": [
+      "food",
+      "beverage",
+      "nutrition",
+      "global brand"
+    ]
+  },
+  {
+    "id": "37",
+    "title": "Oracle",
+    "createdBy": "Larry Ellison",
+    "createdAt": "2024-03-16T18:45:09Z",
+    "modifiedAt": "2024-03-15T14:30:00Z",
+    "stacks": "Software, Cloud Computing",
+    "contentType": "Service",
+    "description": "American multinational computer technology corporation.",
+    "tags": [
+      "software",
+      "cloud computing",
+      "database management"
+    ]
+  },
+  {
+    "id": "38",
+    "title": "AT&T",
+    "createdBy": "Alexander Graham Bell",
+    "createdAt": "2024-03-17T19:20:33Z",
+    "modifiedAt": "2024-03-15T15:30:00Z",
+    "stacks": "Telecommunications, Media",
+    "contentType": "Service",
+    "description": "American multinational conglomerate holding company.",
+    "tags": [
+      "telecommunications",
+      "media",
+      "technology"
+    ]
+  },
+  {
+    "id": "39",
+    "title": "Costco",
+    "createdBy": "James Sinegal",
+    "createdAt": "2024-03-18T20:09:47Z",
+    "modifiedAt": "2024-03-15T16:30:00Z",
+    "stacks": "Retail",
+    "contentType": "Product",
+    "description": "Multinational corporation that operates a chain of membership-only warehouse clubs.",
+    "tags": [
+      "retail",
+      "wholesale",
+      "global brand"
+    ]
+  },
+  {
+    "id": "40",
+    "title": "Tesla",
+    "createdBy": "Elon Musk",
+    "createdAt": "2024-03-19T21:15:52Z",
+    "modifiedAt": "2024-03-15T17:30:00Z",
+    "stacks": "Automotive, Energy",
+    "contentType": "Product",
+    "description": "American electric vehicle and clean energy company.",
+    "tags": [
+      "automotive",
+      "electric vehicles",
+      "clean energy",
+      "innovation"
+    ]
+  },
+  {
+    "id": "41",
+    "title": "Netflix",
+    "createdBy": "Reed Hastings",
+    "createdAt": "2024-03-20T22:04:16Z",
+    "modifiedAt": "2024-03-15T18:30:00Z",
+    "stacks": "Entertainment, Media",
+    "contentType": "Service",
+    "description": "Streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more.",
+    "tags": [
+      "entertainment",
+      "streaming",
+      "media",
+      "technology"
+    ]
+  },
+  {
+    "id": "42",
+    "title": "Intel",
+    "createdBy": "Robert Noyce",
+    "createdAt": "2024-03-21T23:12:30Z",
+    "modifiedAt": "2024-03-15T19:30:00Z",
+    "stacks": "Semiconductors, Technology",
+    "contentType": "Product",
+    "description": "American multinational corporation and technology company.",
+    "tags": [
+      "semiconductors",
+      "technology",
+      "computing"
+    ]
+  },
+  {
+    "id": "43",
+    "title": "Amazon",
+    "createdBy": "Jeff Bezos",
+    "createdAt": "2024-03-22T00:21:45Z",
+    "modifiedAt": "2024-03-15T20:30:00Z",
+    "stacks": "E-commerce, Cloud Computing",
+    "contentType": "Service",
+    "description": "American multinational technology company.",
+    "tags": [
+      "e-commerce",
+      "cloud computing",
+      "digital streaming",
+      "artificial intelligence"
+    ]
+  },
+  {
+    "id": "44",
+    "title": "Google",
+    "createdBy": "Larry Page",
+    "createdAt": "2024-03-23T01:33:57Z",
+    "modifiedAt": "2024-03-15T21:30:00Z",
+    "stacks": "Technology, Internet",
+    "contentType": "Service",
+    "description": "American multinational technology company.",
+    "tags": [
+      "search engine",
+      "advertising",
+      "cloud computing",
+      "software"
+    ]
+  },
+  {
+    "id": "45",
+    "title": "McDonald's",
+    "createdBy": "Ray Kroc",
+    "createdAt": "2024-03-24T02:44:18Z",
+    "modifiedAt": "2024-03-15T22:30:00Z",
+    "stacks": "Fast Food",
+    "contentType": "Product",
+    "description": "American fast food company.",
+    "tags": [
+      "fast food",
+      "global brand",
+      "franchise"
+    ]
+  },
+  {
+    "id": "46",
+    "title": "Coca-Cola",
+    "createdBy": "John Stith Pemberton",
+    "createdAt": "2024-03-25T03:55:29Z",
+    "modifiedAt": "2024-03-15T23:30:00Z",
+    "stacks": "Beverages",
+    "contentType": "Product",
+    "description": "Carbonated soft drink manufactured by The Coca-Cola Company.",
+    "tags": [
+      "beverages",
+      "soft drinks",
+      "global brand"
+    ]
+  },
+  {
+    "id": "47",
+    "title": "Nike",
+    "createdBy": "Bill Bowerman",
+    "createdAt": "2024-03-26T04:06:40Z",
+    "modifiedAt": "2024-03-16T00:30:00Z",
+    "stacks": "Apparel, Equipment",
+    "contentType": "Product",
+    "description": "American multinational corporation.",
+    "tags": [
+      "apparel",
+      "sports equipment",
+      "footwear"
+    ]
+  },
+  {
+    "id": "48",
+    "title": "Microsoft",
+    "createdBy": "Bill Gates",
+    "createdAt": "2024-03-27T05:17:51Z",
+    "modifiedAt": "2024-03-16T01:30:00Z",
+    "stacks": "Software, Technology",
+    "contentType": "Service",
+    "description": "American multinational technology corporation.",
+    "tags": [
+      "software",
+      "technology",
+      "computing"
+    ]
+  },
+  {
+    "id": "49",
+    "title": "Samsung",
+    "createdBy": "Lee Byung-chul",
+    "createdAt": "2024-03-28T06:29:02Z",
+    "modifiedAt": "2024-03-16T02:30:00Z",
+    "stacks": "Electronics, Technology",
+    "contentType": "Product",
+    "description": "South Korean multinational electronics company.",
+    "tags": [
+      "electronics",
+      "technology",
+      "innovation"
+    ]
+  },
+  {
+    "id": "50",
+    "title": "Visa Inc.",
+    "createdBy": "Dee Hock",
+    "createdAt": "2024-03-29T07:40:13Z",
+    "modifiedAt": "2024-03-16T03:30:00Z",
+    "stacks": "Financial Services",
+    "contentType": "Service",
+    "description": "American multinational financial services corporation.",
+    "tags": [
+      "financial services",
+      "payment technology",
+      "global network"
+    ]
+  },
+  {
+    "id": "51",
+    "title": "Patagonia",
+    "createdBy": "Yvon Chouinard",
+    "createdAt": "2024-03-01T12:10:00Z",
+    "modifiedAt": "2024-03-05T13:15:00Z",
+    "stacks": "Outdoor Clothing, Gear",
+    "contentType": "Product",
+    "description": "American retailer that sells outdoor clothing marketed as sustainable.",
+    "tags": [
+      "outdoor",
+      "clothing",
+      "sustainability",
+      "gear"
+    ]
+  },
+  {
+    "id": "52",
+    "title": "Pfizer",
+    "createdBy": "Charles Pfizer",
+    "createdAt": "2024-03-02T14:20:10Z",
+    "modifiedAt": "2024-03-06T15:25:00Z",
+    "stacks": "Pharmaceuticals, Biotechnology",
+    "contentType": "Product",
+    "description": "American multinational pharmaceutical corporation.",
+    "tags": [
+      "pharmaceuticals",
+      "biotechnology",
+      "healthcare",
+      "medicine"
+    ]
+  },
+  {
+    "id": "53",
+    "title": "SpaceX",
+    "createdBy": "Elon Musk",
+    "createdAt": "2024-03-03T16:30:20Z",
+    "modifiedAt": "2024-03-07T17:35:00Z",
+    "stacks": "Aerospace, Space Travel",
+    "contentType": "Service",
+    "description": "American aerospace manufacturer and space transport services company.",
+    "tags": [
+      "aerospace",
+      "space travel",
+      "technology",
+      "innovation"
+    ]
+  },
+  {
+    "id": "54",
+    "title": "TikTok",
+    "createdBy": "Zhang Yiming",
+    "createdAt": "2024-03-04T18:40:30Z",
+    "modifiedAt": "2024-03-08T19:45:00Z",
+    "stacks": "Social Media, Entertainment",
+    "contentType": "Service",
+    "description": "International version of Chinese video-sharing social networking service Douyin.",
+    "tags": [
+      "social media",
+      "video sharing",
+      "entertainment",
+      "music"
+    ]
+  },
+  {
+    "id": "55",
+    "title": "Toyota",
+    "createdBy": "Kiichiro Toyoda",
+    "createdAt": "2024-03-05T20:50:40Z",
+    "modifiedAt": "2024-03-09T21:55:00Z",
+    "stacks": "Automotive",
+    "contentType": "Product",
+    "description": "Japanese multinational automotive manufacturer.",
+    "tags": [
+      "automotive",
+      "cars",
+      "technology",
+      "manufacturing"
+    ]
+  },
+  {
+    "id": "56",
+    "title": "Visa",
+    "createdBy": "Dee Hock",
+    "createdAt": "2024-03-06T22:00:50Z",
+    "modifiedAt": "2024-03-10T23:05:00Z",
+    "stacks": "Financial Services, Payments",
+    "contentType": "Service",
+    "description": "American multinational financial services corporation.",
+    "tags": [
+      "financial services",
+      "payments",
+      "technology",
+      "credit cards"
+    ]
+  },
+  {
+    "id": "57",
+    "title": "Walmart",
+    "createdBy": "Sam Walton",
+    "createdAt": "2024-03-07T24:10:00Z",
+    "modifiedAt": "2024-03-11T01:15:00Z",
+    "stacks": "Retail, E-commerce",
+    "contentType": "Product",
+    "description": "American multinational retail corporation that operates a chain of hypermarkets.",
+    "tags": [
+      "retail",
+      "e-commerce",
+      "supermarket",
+      "consumer goods"
+    ]
+  },
+  {
+    "id": "58",
+    "title": "Warner Bros.",
+    "createdBy": "Albert, Harry, Sam, and Jack Warner",
+    "createdAt": "2024-03-08T02:20:10Z",
+    "modifiedAt": "2024-03-12T03:25:00Z",
+    "stacks": "Entertainment, Media",
+    "contentType": "Media",
+    "description": "American multinational mass media and entertainment conglomerate.",
+    "tags": [
+      "entertainment",
+      "movies",
+      "television",
+      "media"
+    ]
+  },
+  {
+    "id": "59",
+    "title": "Xiaomi",
+    "createdBy": "Lei Jun",
+    "createdAt": "2024-03-09T04:30:20Z",
+    "modifiedAt": "2024-03-13T05:35:00Z",
+    "stacks": "Electronics, Smartphones",
+    "contentType": "Product",
+    "description": "Chinese electronics company that makes smartphones, mobile apps, laptops, and home appliances.",
+    "tags": [
+      "electronics",
+      "smartphones",
+      "technology",
+      "innovation"
+    ]
+  },
+  {
+    "id": "60",
+    "title": "YouTube",
+    "createdBy": "Steve Chen, Chad Hurley, and Jawed Karim",
+    "createdAt": "2024-03-10T06:40:30Z",
+    "modifiedAt": "2024-03-14T07:45:00Z",
+    "stacks": "Social Media, Video Sharing",
+    "contentType": "Service",
+    "description": "American online video sharing and social media platform.",
+    "tags": [
+      "social media",
+      "video sharing",
+      "entertainment",
+      "education"
+    ]
+  },
+  {
+    "id": "61",
+    "title": "Zoom",
+    "createdBy": "Eric Yuan",
+    "createdAt": "2024-03-11T08:50:40Z",
+    "modifiedAt": "2024-03-15T09:55:00Z",
+    "stacks": "Telecommunications, Software",
+    "contentType": "Service",
+    "description": "American communications technology company known for its video telephony and online chat services.",
+    "tags": [
+      "telecommunications",
+      "software",
+      "video conferencing",
+      "communication"
+    ]
+  },
+  {
+    "id": "62",
+    "title": "Adobe",
+    "createdBy": "John Warnock, Charles Geschke",
+    "createdAt": "2024-03-12T10:00:50Z",
+    "modifiedAt": "2024-03-16T11:05:00Z",
+    "stacks": "Software, Digital Media",
+    "contentType": "Service",
+    "description": "American multinational computer software company.",
+    "tags": [
+      "software",
+      "digital media",
+      "creativity",
+      "technology"
+    ]
+  },
+  {
+    "id": "63",
+    "title": "Airbnb",
+    "createdBy": "Brian Chesky, Joe Gebbia, Nathan Blecharczyk",
+    "createdAt": "2024-03-13T12:10:00Z",
+    "modifiedAt": "2024-03-17T13:15:00Z",
+    "stacks": "Hospitality, Online Marketplace",
+    "contentType": "Service",
+    "description": "American company that operates an online marketplace for lodging, primarily homestays.",
+    "tags": [
+      "hospitality",
+      "lodging",
+      "travel",
+      "marketplace"
+    ]
+  },
+  {
+    "id": "64",
+    "title": "Amazon",
+    "createdBy": "Jeff Bezos",
+    "createdAt": "2024-03-14T14:20:10Z",
+    "modifiedAt": "2024-03-18T15:25:00Z",
+    "stacks": "E-commerce, Cloud Computing",
+    "contentType": "Service",
+    "description": "American multinational technology company that focuses on e-commerce, cloud computing, and AI.",
+    "tags": [
+      "e-commerce",
+      "cloud computing",
+      "technology",
+      "retail"
+    ]
+  },
+  {
+    "id": "65",
+    "title": "Apple",
+    "createdBy": "Steve Jobs, Steve Wozniak, Ronald Wayne",
+    "createdAt": "2024-03-15T16:30:20Z",
+    "modifiedAt": "2024-03-19T17:35:00Z",
+    "stacks": "Technology, Consumer Electronics",
+    "contentType": "Product",
+    "description": "American multinational technology company that specializes in consumer electronics, software, and online services.",
+    "tags": [
+      "technology",
+      "consumer electronics",
+      "innovation",
+      "computing"
+    ]
+  },
+  {
+    "id": "66",
+    "title": "Coca-Cola",
+    "createdBy": "John Stith Pemberton",
+    "createdAt": "2024-03-16T18:40:30Z",
+    "modifiedAt": "2024-03-20T19:45:00Z",
+    "stacks": "Beverages",
+    "contentType": "Product",
+    "description": "American multinational beverage corporation incorporated under Delaware's General Corporation Law.",
+    "tags": [
+      "beverages",
+      "soft drinks",
+      "food",
+      "global brand"
+    ]
+  },
+  {
+    "id": "67",
+    "title": "Disney",
+    "createdBy": "Walt Disney, Roy O. Disney",
+    "createdAt": "2024-03-17T20:50:40Z",
+    "modifiedAt": "2024-03-21T21:55:00Z",
+    "stacks": "Entertainment, Media",
+    "contentType": "Media",
+    "description": "American diversified multinational mass media and entertainment conglomerate.",
+    "tags": [
+      "entertainment",
+      "media",
+      "movies",
+      "theme parks"
+    ]
+  },
+  {
+    "id": "68",
+    "title": "Facebook",
+    "createdBy": "Mark Zuckerberg",
+    "createdAt": "2024-03-18T22:00:50Z",
+    "modifiedAt": "2024-03-22T23:05:00Z",
+    "stacks": "Social Media, Technology",
+    "contentType": "Service",
+    "description": "American online social media and social networking service owned by Meta Platforms.",
+    "tags": [
+      "social media",
+      "technology",
+      "communication",
+      "networking"
+    ]
+  },
+  {
+    "id": "69",
+    "title": "Google",
+    "createdBy": "Larry Page, Sergey Brin",
+    "createdAt": "2024-03-19T24:10:00Z",
+    "modifiedAt": "2024-03-23T01:15:00Z",
+    "stacks": "Technology, Internet",
+    "contentType": "Service",
+    "description": "American multinational technology company that specializes in Internet-related services and products.",
+    "tags": [
+      "technology",
+      "internet",
+      "search engine",
+      "innovation"
+    ]
+  },
+  {
+    "id": "70",
+    "title": "H&M",
+    "createdBy": "Erling Persson",
+    "createdAt": "2024-03-20T02:20:10Z",
+    "modifiedAt": "2024-03-24T03:25:00Z",
+    "stacks": "Retail, Fashion",
+    "contentType": "Product",
+    "description": "Swedish multinational clothing-retail company known for its fast-fashion clothing.",
+    "tags": [
+      "retail",
+      "fashion",
+      "clothing",
+      "sustainability"
+    ]
+  },
+  {
+    "id": "71",
+    "title": "IBM",
+    "createdBy": "Charles Ranlett Flint",
+    "createdAt": "2024-03-21T04:30:20Z",
+    "modifiedAt": "2024-03-25T05:35:00Z",
+    "stacks": "Technology, Computing",
+    "contentType": "Service",
+    "description": "American multinational technology and consulting company.",
+    "tags": [
+      "technology",
+      "computing",
+      "innovation",
+      "business services"
+    ]
+  },
+  {
+    "title": "Toshiba",
+    "stacks": "Sales",
+    "contentType": "Marketing",
+    "description": "Robust and Technical",
+    "tags": [
+      "Drive"
+    ],
+    "id": "74",
+    "createdAt": "2024-02-28T12:22:51.769Z",
+    "modifiedAt": "2024-02-28T12:22:51.769Z"
+  },
+  {
+    "title": "Lenovo",
+    "stacks": "Legion",
+    "contentType": "Technical",
+    "description": "Spec Sheets and Much More for technical writers to refer from.",
+    "tags": [
+      "Gaming",
+      "GamingLaptop"
+    ],
+    "id": "75",
+    "createdAt": "2024-02-28T12:25:58.958Z",
+    "modifiedAt": "2024-02-28T12:25:58.958Z"
+  }
+]
