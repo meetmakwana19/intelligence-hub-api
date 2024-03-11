@@ -8,9 +8,7 @@ frameworksRouter.get("/", (req, res) => {
     return utils.readFrameworks()
     .then((data) => {
         res.status(200).json({
-            message: "All frameworks fetched.",
-            data,
-            error: null,
+            frameworks: data,
         })
     })
 })
@@ -21,14 +19,14 @@ frameworksRouter.post("/", (req, res) => {
     return utils.readFrameworks()
     .then((data) => {
         console.log("Data ------ ", data);
-        data.push(newFramework)
+        data.push(newFramework.framework)
 
         return fs.writeFile("frameworks.json", JSON.stringify(data))
     })
     .then(() => {
         return res.status(201).json({
             message: "New frameworks added",
-            data: newFramework,
+            framework: newFramework.framework,
             error: null,
         })
     })
